@@ -635,6 +635,7 @@ Subscribe to:
 <script type="text/javascript">window.___gcfg = {'lang': 'en'};</script>
 <script type="text/javascript" src="js/jquery.js"></script>
 <script type="text/javascript" src="js/coordenadas.js"></script>
+<script type="text/javascript" src="js/deal_index.js"></script>
 </div></div>
 </div>
 <!-- Sidebar -->
@@ -672,14 +673,14 @@ Subscribe to:
 <div class='sidebar2 section' id='sidebar3'><div class='widget PopularPosts' id='PopularPosts2'>
 <h2>Ayúdanos a mejorar</h2>
 <div class='widget-content popular-posts'>
-    <form id="login" name="login" method="post" action=" " class="post2">
+    <form id="comentario" name="comentario" method="post" action=" " class="post2">
     	  
-	       <label for="usuario">Tipo de aporte</label>
+	       <label for="usuario">Quiero expresar una:</label>
 	       <br /> 
 	         <select name="tipo_com" id="tipo_com" class="select">
-	         	 <option value="1">Felicitacion</option>
-	         	 <option value="2">Sugerencia</option>
-	         	 <option value="3">No conformidad</option>
+	         	 <option selected="selected" value="felicitacion">Felicitación</option>
+	         	 <option value="sugerencia">Sugerencia</option>
+	         	 <option value="no_conformidad">No conformidad</option>
 	         </select> 
 	      
 	   
@@ -695,7 +696,7 @@ Subscribe to:
 	  
 	     <p style="padding-left:63px">
 	       <label>
-	         <input type="submit" name="pqr" id="pqr" value="Enviar" />
+	         <input type="button" name="pqr" id="pqr" value="Enviar" onclick="javascript:ingresar_comentarios()" />
 	       </label>
 	     </p>
     	
