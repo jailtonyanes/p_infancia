@@ -1,55 +1,58 @@
 <?php
-    switch ($_GET['uid2']) {
-    case 1:
-    $var='1';
-    $titulo="<h3>PRE-MATEMÁTICAS:</h3>";
-        $contenido= '            
-        
-        <li>Adpatción</li>
-        <li>Color: amarillo.</li>
-        <li>Figura: Círculo.</li>
-        <li>Noción: Ariba - Abajo.</li>
-';
-        break;
-    case 2:
-       $var='2';
-    $titulo="<h3>PRE-ESCRITURA:</h3>";
-        $contenido= '            
-        
-        <li>Garabateo libre</li>
-            
-';
-        break;
-    case 3:    
-    $var='3';
-    $titulo="<h3>MOTRICIDAD FINA:</h3>";
-        $contenido= '            
-        
-        <li>Modelado: arcilla, harina de trigo, plastilina, rasgado de pliegos de papel, ensartodos.</li>    
-';
-        break;
-    case 4:
-    $var='4';
-    $titulo="<h3>MOTRICIDAD GRUESA:</h3>";
-        $contenido= '            
-        
-        <li>Estimulación temprana, gateo, masajes, rollos, pelotas.</li>
-        <li>Gimnasio, colchonetas.</li>
-';
-        break;
-    case 5:
-    $var='5';
-    $titulo="<h3>LENGUAJE:</h3>";
-        $contenido= '            
-        
-        <li>Cuentos, canciones, juegos, rondas y títeres.</li>
-        <li>Rimas cortas.</li>
-           
-';
-        break;
-    
-    
-    }
+if(isset($_GET['uid'])){
+			    switch ($_GET['uid']) {
+			    case 1:
+			       $unidad=1;  $titulo='Unidad I';
+			        break;
+			    case 2:
+			       $unidad=2; $titulo='Unidad II';
+			        break;
+			    case 3:
+			       $unidad=3; $titulo='Unidad III';
+			        break;
+			    case 4:
+			       $unidad=4;  $titulo='Unidad IV';
+			        break;
+			    case 5:
+			       $unidad=5; $titulo='Unidad V';
+			        break;
+			    case 6:
+			       $unidad=6; $titulo='Unidad VI';
+			        break;
+			    case 7:
+			       $unidad=7;  $titulo='Unidad VII';
+			        break;
+			    case 8:
+			       $unidad=8; $titulo='Unidad VIII';
+			        break;
+			    case 9:
+			       $unidad=9; $titulo='Unidad IX';
+			        break;
+			    case 10:
+			       $unidad=10;  $titulo='Unidad X';
+			        break;
+			    case 11:
+			       $unidad=11; $titulo='Unidad XI';
+			        break;
+			     case 12:
+			       $unidad=12; $titulo='Unidad XII';
+			        break;
+			     case 13:
+			       $unidad=13; $titulo='Unidad XIII';
+			        break;
+			     case 14:
+			       $unidad=14; $titulo='Unidad XIV';
+			        break;
+			     case 15:
+			       $unidad=15; $titulo='Unidad XV';
+			        break;
+			     case 16:
+			       $unidad=16; $titulo='Unidad XI';
+			        break;
+			    
+			    }
+			   
+	}
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html dir='ltr' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
@@ -177,19 +180,12 @@ if (window.jstiming) window.jstiming.load.tick('headEnd');
 </h3>
 		</li>
 		<ul>
-<!-- 			<li>Pre-matemáticas</li>
- -->
-        <?php
-         echo $contenido;
-        ?>
-
-
-
-<!-- 			<li>Pre-escritura</li>
-			<li>Motricidad Fina</li>
-			<li>Motricidad Gruesa</li>
-			<li>Lenguaje</li>
- -->		</ul>
+			<li><a href="tematica.php?uid2=1&unidad=<?php echo $unidad ?>">Pre-matemáticas</a></li>
+			<li><a href="tematica.php?uid2=2&unidad=<?php echo $unidad ?>">Pre-escritura</a></li>
+			<li><a href="tematica.php?uid2=3&unidad=<?php echo $unidad ?>">Motricidad Fina</a></li>
+			<li><a href="tematica.php?uid2=4&unidad=<?php echo $unidad ?>">Motricidad Gruesa</a></li>
+			<li><a href="tematica.php?uid2=5&unidad=<?php echo $unidad ?>">Lenguaje</a></li>
+		</ul>
 		
 	
 	</ol>
@@ -200,7 +196,7 @@ if (window.jstiming) window.jstiming.load.tick('headEnd');
       
 </div>
 <div class='blog-pager' id='blog-pager'>
-<a class='home-link' href='prog_parvulo.php?uid=<?php echo $var ?>'>Regresar</a>
+<a class='home-link' href='p_prejardin.php'>Regresar</a>
 </div>
 <div class='clear'></div>
 <div class='blog-feeds'>

@@ -5,10 +5,12 @@
     $titulo="<h3>PRE-MATEMÁTICAS:</h3>";
         $contenido= '            
         
-        <li>Adpatción</li>
-        <li>Color: amarillo.</li>
-        <li>Figura: Círculo.</li>
-        <li>Noción: Ariba - Abajo.</li>
+        <li>Números del 1 al 9.</li>
+        <li>Trazos colores primarios.</li>
+        <li>Círculo, cuadrado, triangulo y rectángulo.</li>
+        <li>Simetría de figuras.</li>
+        <li>Secuencia de figuras y números.</li>
+        <li>Discriminación figura fondo.</li>
 ';
         break;
     case 2:
@@ -16,7 +18,9 @@
     $titulo="<h3>PRE-ESCRITURA:</h3>";
         $contenido= '            
         
-        <li>Garabateo libre</li>
+        <li>Trazos y refuerzo de vocales.</li>
+        <li>Escribir el nombre y el apellido.</li>
+        <li>Aprestamiento de letra cursiva.</li>
             
 ';
         break;
@@ -25,7 +29,11 @@
     $titulo="<h3>MOTRICIDAD FINA:</h3>";
         $contenido= '            
         
-        <li>Modelado: arcilla, harina de trigo, plastilina, rasgado de pliegos de papel, ensartodos.</li>    
+        <li>Dibujo libre y con instrucciones.</li>
+        <li>Técnicas de modelado, rasgado, entorchado.</li>
+        <li>Pintura con diferentes técnicas y material.</li>
+        <li>Recortado de líneas rectas.</li>
+        <li>Hace trazos en diferentes direcciones.</li>   
 ';
         break;
     case 4:
@@ -33,8 +41,13 @@
     $titulo="<h3>MOTRICIDAD GRUESA:</h3>";
         $contenido= '            
         
-        <li>Estimulación temprana, gateo, masajes, rollos, pelotas.</li>
-        <li>Gimnasio, colchonetas.</li>
+        <li>Ejecutar desplazamientos en parejas de diferentes formas por planos a altura.</li>
+        <li>Lateralidad izquierda-derecha.</li>i>
+        <li>Manejo de filas.</li>
+        <li>Coordinación y atención a instrucciones.</li>
+        <li>Ubicación espacial.</li>
+        <li>Ejercicios dirigidos (circuitos con obstácu-los).</li>
+        <li>Gimnasio.</li>
 ';
         break;
     case 5:
@@ -42,8 +55,11 @@
     $titulo="<h3>LENGUAJE:</h3>";
         $contenido= '            
         
-        <li>Cuentos, canciones, juegos, rondas y títeres.</li>
-        <li>Rimas cortas.</li>
+        <li>Interpreta historietas mudas.</li>i>
+        <li>Rimas.</li>
+        <li>Trabalenguas.</li>
+        <li>Cancionero.</li>
+        
            
 ';
         break;
