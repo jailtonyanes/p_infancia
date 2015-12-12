@@ -420,6 +420,10 @@ margin: .2em 0 0;
 }
 #PageList1 h2, #Pagelist2 h2{ display:none;}
 
+#login p
+{
+	padding-left: 25px;
+}
 
 /* Posts
 -----------------------------------------------
@@ -436,6 +440,17 @@ position:relative;
 width:190px;
   }
 
+  .post2 {
+border:1px solid #f3f7eb;
+float:left;
+
+margin:14px 28px 14px 0px;
+overflow:hidden;
+padding:15px 5px 5px 5px;
+position:relative;
+width:190px;
+  }
+
 .post h3 {
 top:5px;
 font-size:14px;
@@ -444,6 +459,11 @@ position: absolute;
 text-align:center;
 line-height:17px;
 font-family: 'Oldenburg', cursive;
+}
+
+.select
+{
+	width: 191px;
 }
 
 .post h3 a, .post h3 a:visited {
