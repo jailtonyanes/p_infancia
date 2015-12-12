@@ -123,7 +123,8 @@ if (window.jstiming) window.jstiming.load.tick('headEnd');
 <div class='post hentry'>
 <a name='8178176466869786854'></a>
 <h3 class='post-title entry-title'>
-<a href='2015/11/lorem-ipsum_53.html'>Unidad I: El colegio</a>
+<a href='prog_parvulo.php?uid=1'>Unidad I: El colegio</a>
+
 </h3>
 <div class='post-header'>
 <div class='post-header-line-1'></div>
@@ -193,7 +194,7 @@ Labels:
 <div class='post hentry'>
 <a name='7335923200631861691'></a>
 <h3 class='post-title entry-title'>
-<a href='2015/11/lorem-ipsum_50.html'>Unidad II:Mi familia y mi casa:dependencias</a>
+<a href='prog_parvulo.php?uid=2'>Unidad II:Mi familia y mi casa:dependencias</a>
 </h3>
 <div class='post-header'>
 <div class='post-header-line-1'></div>
@@ -242,7 +243,7 @@ Labels:
 <div class='post hentry'>
 <a name='5395310937979818661'></a>
 <h3 class='post-title entry-title'>
-<a href='2015/11/lorem-ipsum_5.html'>Unidad III: El cuerpo y aseo personal</a>
+<a href='prog_parvulo.php?uid=3'>Unidad III: El cuerpo y aseo personal</a>
 </h3>
 <div class='post-header'>
 <div class='post-header-line-1'></div>
@@ -292,7 +293,7 @@ Labels:
 <div class='post hentry'>
 <a name='4085996068485245780'></a>
 <h3 class='post-title entry-title'>
-<a href='2015/11/lorem-ipsum_18.html'>Unidad IV: Prendas y estados del tiempo </a>
+<a href='prog_parvulo.php?uid=4'>Unidad IV: Prendas y estados del tiempo </a>
 </h3>
 <div class='post-header'>
 <div class='post-header-line-1'></div>
@@ -342,7 +343,7 @@ Labels:
 <div class='post hentry'>
 <a name='1942540987956832015'></a>
 <h3 class='post-title entry-title'>
-<a href='2015/11/lorem-ipsum.html'>Unidad V: El campo y animales de la granja</a>
+<a href='prog_parvulo.php?uid=5'>Unidad V: El campo y animales de la granja</a>
 </h3>
 <div class='post-header'>
 <div class='post-header-line-1'></div>
@@ -393,7 +394,7 @@ Labels:
 <div class='post hentry'>
 <a name='4085996068485245780'></a>
 <h3 class='post-title entry-title'>
-<a href='2015/11/lorem-ipsum_18.html'>Unidad VI: Animales de la selva</a>
+<a href='prog_parvulo.php?uid=6'>Unidad VI: Animales de la selva</a>
 </h3>
 <div class='post-header'>
 <div class='post-header-line-1'></div>
@@ -446,7 +447,7 @@ Labels:
 <div class='post hentry'>
 <a name='4085996068485245780'></a>
 <h3 class='post-title entry-title'>
-<a href='2015/11/lorem-ipsum_18.html'>Unidad VII: Las Plantas, las Flores Y los alimentos</a>
+<a href='prog_parvulo.php?uid=7'>Unidad VII: Las Plantas, las Flores Y los alimentos</a>
 </h3>
 <div class='post-header'>
 <div class='post-header-line-1'></div>
@@ -499,7 +500,7 @@ Labels:
 <div class='post hentry'>
 <a name='4085996068485245780'></a>
 <h3 class='post-title entry-title'>
-<a href='2015/11/lorem-ipsum_18.html'>Unidad VIII: Medios de transporte y señales de tránsito</a>
+<a href='prog_parvulo.php?uid=8'>Unidad VIII: Medios de transporte y señales de tránsito</a>
 </h3>
 <div class='post-header'>
 <div class='post-header-line-1'></div>
@@ -552,7 +553,7 @@ Labels:
 <div class='post hentry'>
 <a name='4085996068485245780'></a>
 <h3 class='post-title entry-title'>
-<a href='2015/11/lorem-ipsum_18.html'>Unidad IX: Profesiones y oficios – la ciudad</a>
+<a href='prog_parvulo.php?uid=9'>Unidad IX: Profesiones y oficios – la ciudad</a>
 </h3>
 <div class='post-header'>
 <div class='post-header-line-1'></div>
@@ -605,7 +606,7 @@ Labels:
 <div class='post hentry'>
 <a name='4085996068485245780'></a>
 <h3 class='post-title entry-title'>
-<a href='2015/11/lorem-ipsum_18.html'>Unidad X: Mi país</a>
+<a href='prog_parvulo.php?uid=10'>Unidad X: Mi país</a>
 </h3>
 <div class='post-header'>
 <div class='post-header-line-1'></div>
@@ -659,7 +660,7 @@ Labels:
 <div class='post hentry'>
 <a name='2793729962376381999'></a>
 <h3 class='post-title entry-title'>
-<a href='2015/11/template-images.html'>Unidad XI: Navidad </a>
+<a href='prog_parvulo.php?uid=11'>Unidad XI: Navidad </a>
 </h3>
 <div class='post-header'>
 <div class='post-header-line-1'></div>
@@ -781,6 +782,8 @@ for (var i=0; i < feeds.entries.length; i++) {
 jQuery('#rssloading').fadeOut();
 jQuery('#rssdata').slideDown();
 }, 5);</script>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/coordenadas.js"></script>
 </div>
 <div class='clear'></div>
 <span class='widget-item-control'>

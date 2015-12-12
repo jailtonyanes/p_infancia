@@ -30,25 +30,25 @@ $(document).ready(function(){
      
     if(posX>=137 && posX<=244 && posY>=134 && posY <=204)
     {
-     window.location.href='p_jardin.php';
+     window.location.href='p_jardin.php?uid='+1;
     }
     else
     {
       if(posX>=301 && posX<=430 && posY>=178 && posY <=287)
        {
-         window.location.href='p_prejardin.php';  	
+         window.location.href='p_prejardin.php?uid='+2;  	
        }
        else
        {
          if(posX>=436 && posX<=537 && posY>=213 && posY <=288)
          {
-          window.location.href='p_parvulo.php';  	
+          window.location.href='p_parvulo.php?uid='+3;  	
          }	
          else
          {
          	if(posX>=531 && posX<=633 && posY>=102 && posY <=197)
 	         {
-	          window.location.href='p_transicion.php';  	
+	          window.location.href='p_transicion.php?uid='+4;  	
 	         }
          }
        }	

@@ -4,3 +4,5 @@
 <li><a href='p_jardin.php'>jardin</a></li>
 <li><a href='p_transicion.php'>Transición</a></li> -->
 
+<?php
+?>
