@@ -1,3 +1,8 @@
+ <?php
+  session_start();
+  if(!isset($_SESSION['user_authorized'])) header("Location:index.php");
+
+ ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html dir='ltr' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
 <head>
@@ -23,6 +28,7 @@ Kiddiez Shop
 <link type='text/css' rel='stylesheet' href='https://www.blogger.com/static/v1/widgets/537653047-widget_css_bundle.css' />
 <link type='text/css' rel='stylesheet' href='https://www.blogger.com/dyn-css/authorization.css?targetBlogID=6852192370751838918&zx=7b04a788-0865-46f3-95bd-7f829e0d37ec' />
 <link rel="stylesheet" type="text/css" href="screen.css">
+<link rel="stylesheet"  type="text/css"href="TableCSSCode.css" />
 
 
 
@@ -91,7 +97,7 @@ if (window.jstiming) window.jstiming.load.tick('headEnd');
 <div class='widget-content'>
 <ul>
 <?php
- include("template/menuprincipal.php");
+ include("template/menuprincipal2.php");
 ?>
 </ul>
 <div class='clear'></div>
@@ -127,19 +133,10 @@ if (window.jstiming) window.jstiming.load.tick('headEnd');
 
 			<div class='post-outer'>
                 
-                <table border="1">
-                    <tr>
-                        <th>Tipo de comentario</th>
-                        <th>Descripción</th>
-                        <th>Fecha</th>
-                    </tr>
-                    <tr>
-                        <td>Sugerencia</td>
-                        <td>Deben mejorar</td>
-                        <td>2015/12/12</td>
-                    </tr>
+                <table class="CSSTableGenerator" id="reccom">
+                   
                 </table>      
-
+               </div> 
 			</div>
 
 
@@ -148,7 +145,7 @@ if (window.jstiming) window.jstiming.load.tick('headEnd');
       
 </div>
 <div class='blog-pager' id='blog-pager'>
-<a class='home-link' href='index.html'>Home</a>
+<a class='home-link' href='index2.php'>Menú principal</a>
 </div>
 <div class='clear'></div>
 <div class='blog-feeds'>
@@ -160,7 +157,7 @@ Subscribe to:
 <script type="text/javascript">window.___gcfg = {'lang': 'en'};</script>
 <script type="text/javascript" src="js/jquery.js"></script>
 <script type="text/javascript" src="js/coordenadas.js"></script>
-<script type="text/javascript" src="js/deal_index.js"></script>
+<script type="text/javascript" src="js/deal_comentarios.js"></script>
 </div></div>
 </div>
 <!-- Sidebar -->

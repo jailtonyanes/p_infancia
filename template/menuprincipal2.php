@@ -33,7 +33,15 @@ else
 ?>
 
 <li><a href='index.php'><span>Programa de educacion preescolar <?php echo $grado ?></span></a></li>
+<?php
+  if(isset($_SESSION['nombre']))
+  {
+?>
+   <li><span>Bienvenido(a) <?php echo $_SESSION['nombre'].' '.$_SESSION['apellido'].'          '?></span><a href="destroy.php">Salir</a></li>
 
+<?php   
+  }
+?>
 
 <!-- <li><a href='p_parvulo.php'>Párvulo</a></li>
 <li class='selected'><a href='p_prejardin.php'>Pre-jardin</a></li>

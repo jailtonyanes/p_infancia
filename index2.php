@@ -1,4 +1,7 @@
 <?php 
+ session_start();
+  if(!isset($_SESSION['user_authorized'])) header("Location:index.php");
+
     include('_include/configuration.php');
   include('_classes/conectar.php');
   include('_classes/crud.php');
@@ -6,35 +9,7 @@
   $con = new Coneccion($server,$user,$password,$dbname);
   $con->conectar();
   $crud = new Crud();
- session_start();
-  if(isset($_SESSION['user_authorized'])) {session_destroy();}
-?>
-<?php
- if(isset($_POST['login2']) )
- { 
-    
-    $crud->setConsulta(" SELECT * from usuario WHERE usuario_nick ='$_POST[usuario]' AND usuario_password='$_POST[password]' and usuario_active='1'");
-    $datos1 = $crud->seleccionar($con->getConection());
-    
-    if($crud-> getTuplas()>0)
-    {
-            $_SESSION['user_authorized'] = true;
-            $_SESSION['nombre'] = $datos1[0]['usuario_nombre'];;
-            $_SESSION['apellido'] = $datos1[0]['usuario_apellido'];
-            $_SESSION['password'] = $datos1[0]['usuario_password'];
-            $_SESSION['nick'] = $datos1[0]['usuario_nick'];
-            $_SESSION['tipo'] = $datos1[0]['usuario_tipo'];
-            header("Location: index2.php"); 
-    }
-    else
-    {
-  ?>
-      <script type="text/javascript">
-      alert('Usuario o Password Incorrectos');
-      </script>
-   <?php
-    }
- }
+
  ?> 
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -680,66 +655,25 @@ Subscribe to:
 <!-- Sidebar -->
 <div id='sidebar-wrapper-right'>
 <div class='sidebar2 section' id='sidebar2'><div class='widget PopularPosts' id='PopularPosts1'>
-<h2>Ingreso de usuarios</h2>
-<div class='widget-content popular-posts'>
-    <form id="login" name="login" method="post" action=" " class="post2">
-    	   <p>
-	       <label for="usuario">Usuario</label>
-	       <br /> 
-	         <input type="text" name="usuario" id="usuario" />
-	      
-	     </p>
-	     <p>
-	       <label for="password">Contrase&ntilde;a </label>
-	       <br />
-	         <input type="password" name="password" id="password" />
-	      
-	     </p>
-	     <p>
-	       <label>
-	         <input type="submit" name="login2" id="login2" value="Entrar" />
-	       </label>
-	     </p>
-    	
-    </form>
+<h2>Panel de Control</h2>
 
-</div>
+    <h3>Bienvenido(a) <?php echo $_SESSION['nombre'].' '.$_SESSION['apellido'] ?></h3>
+        <a href="destroy.php">Salir</a>
+
 </div></div>
 </div>
 <!-- spacer for skins that want sidebar and main to be the same height-->
 <!-- PQR!-->
 <div id='sidebar-wrapper-right'>
 <div class='sidebar2 section' id='sidebar3'><div class='widget PopularPosts' id='PopularPosts2'>
-<h2>Ayúdanos a mejorar</h2>
+<h2>Menú Principal</h2>
 <div class='widget-content popular-posts'>
-    <form id="comentario" name="comentario" method="post" action=" " class="post2">
-    	  
-	       <label for="usuario">Quiero expresar una:</label>
-	       <br /> 
-	         <select name="tipo_com" id="tipo_com" class="select">
-	         	 <option selected="selected" value="felicitacion">Felicitación</option>
-	         	 <option value="sugerencia">Sugerencia</option>
-	         	 <option value="no_conformidad">No conformidad</option>
-	         </select> 
-	      
-	   
-	   <br />
-	   <br />
-	  
-	   <label for="coment">Escribe tu comentario</label>
-	       <br />
-	          <textarea rows="4" cols="21" id="coment" name="coment">
+    <ul>
+        <li><a href="revisa_pqr.php">Ver comentarios</a></li>
+        <li><a href=""></a></li>
+        <li><a href=""></a></li>
+    </ul>
 
-</textarea> 
-	      
-	  
-	     <p style="padding-left:63px">
-	       <label>
-	         <input type="button" name="pqr" id="pqr" value="Enviar" onclick="javascript:ingresar_comentarios()" />
-	       </label>
-	     </p>
-    	
-    </form>
 
 </div>
 </div></div>
