@@ -216,7 +216,7 @@ if (window.jstiming) window.jstiming.load.tick('headEnd');
       
 </div>
 <div class='blog-pager' id='blog-pager'>
-<a class='home-link' href='prog_parvulo.php?uid=<?php echo $var ?>'>Regresar</a>
+<a class='home-link' href='prog_transicion.php?uid=<?php echo $var ?>'>Regresar</a>
 </div>
 <div class='clear'></div>
 <div class='blog-feeds'>

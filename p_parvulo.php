@@ -1,3 +1,7 @@
+<?php
+  session_start();
+  if(!isset($_SESSION['user_authorized'])) header("Location:index.php");
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html dir='ltr' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
 <head>
@@ -123,7 +127,7 @@ if (window.jstiming) window.jstiming.load.tick('headEnd');
 <div class='post hentry'>
 <a name='8178176466869786854'></a>
 <h3 class='post-title entry-title'>
-<a href='prog_parvulo.php?uid=1'>Unidad I: El colegio</a>
+<a href='prog_parvulo.php?prog=3&uid=1'>Unidad I: El colegio</a>
 
 </h3>
 <div class='post-header'>
@@ -194,7 +198,7 @@ Labels:
 <div class='post hentry'>
 <a name='7335923200631861691'></a>
 <h3 class='post-title entry-title'>
-<a href='prog_parvulo.php?uid=2'>Unidad II:Mi familia y mi casa:dependencias</a>
+<a href='prog_parvulo.php?prog=3&uid=2'>Unidad II:Mi familia y mi casa:dependencias</a>
 </h3>
 <div class='post-header'>
 <div class='post-header-line-1'></div>
@@ -243,7 +247,7 @@ Labels:
 <div class='post hentry'>
 <a name='5395310937979818661'></a>
 <h3 class='post-title entry-title'>
-<a href='prog_parvulo.php?uid=3'>Unidad III: El cuerpo y aseo personal</a>
+<a href='prog_parvulo.php?prog=3&uid=3'>Unidad III: El cuerpo y aseo personal</a>
 </h3>
 <div class='post-header'>
 <div class='post-header-line-1'></div>
@@ -293,7 +297,7 @@ Labels:
 <div class='post hentry'>
 <a name='4085996068485245780'></a>
 <h3 class='post-title entry-title'>
-<a href='prog_parvulo.php?uid=4'>Unidad IV: Prendas y estados del tiempo </a>
+<a href='prog_parvulo.php?prog=3&uid=4'>Unidad IV: Prendas y estados del tiempo </a>
 </h3>
 <div class='post-header'>
 <div class='post-header-line-1'></div>
@@ -343,7 +347,7 @@ Labels:
 <div class='post hentry'>
 <a name='1942540987956832015'></a>
 <h3 class='post-title entry-title'>
-<a href='prog_parvulo.php?uid=5'>Unidad V: El campo y animales de la granja</a>
+<a href='prog_parvulo.php?prog=3&uid=5'>Unidad V: El campo y animales de la granja</a>
 </h3>
 <div class='post-header'>
 <div class='post-header-line-1'></div>
@@ -394,7 +398,7 @@ Labels:
 <div class='post hentry'>
 <a name='4085996068485245780'></a>
 <h3 class='post-title entry-title'>
-<a href='prog_parvulo.php?uid=6'>Unidad VI: Animales de la selva</a>
+<a href='prog_parvulo.php?prog=3&uid=6'>Unidad VI: Animales de la selva</a>
 </h3>
 <div class='post-header'>
 <div class='post-header-line-1'></div>
@@ -447,7 +451,7 @@ Labels:
 <div class='post hentry'>
 <a name='4085996068485245780'></a>
 <h3 class='post-title entry-title'>
-<a href='prog_parvulo.php?uid=7'>Unidad VII: Las Plantas, las Flores Y los alimentos</a>
+<a href='prog_parvulo.php?prog=3&uid=7'>Unidad VII: Las Plantas, las Flores Y los alimentos</a>
 </h3>
 <div class='post-header'>
 <div class='post-header-line-1'></div>
@@ -500,7 +504,7 @@ Labels:
 <div class='post hentry'>
 <a name='4085996068485245780'></a>
 <h3 class='post-title entry-title'>
-<a href='prog_parvulo.php?uid=8'>Unidad VIII: Medios de transporte y señales de tránsito</a>
+<a href='prog_parvulo.php?prog=3&uid=8'>Unidad VIII: Medios de transporte y señales de tránsito</a>
 </h3>
 <div class='post-header'>
 <div class='post-header-line-1'></div>
@@ -553,7 +557,7 @@ Labels:
 <div class='post hentry'>
 <a name='4085996068485245780'></a>
 <h3 class='post-title entry-title'>
-<a href='prog_parvulo.php?uid=9'>Unidad IX: Profesiones y oficios – la ciudad</a>
+<a href='prog_parvulo.php?prog=3&uid=9'>Unidad IX: Profesiones y oficios – la ciudad</a>
 </h3>
 <div class='post-header'>
 <div class='post-header-line-1'></div>
@@ -606,7 +610,7 @@ Labels:
 <div class='post hentry'>
 <a name='4085996068485245780'></a>
 <h3 class='post-title entry-title'>
-<a href='prog_parvulo.php?uid=10'>Unidad X: Mi país</a>
+<a href='prog_parvulo.php?prog=3&uid=10'>Unidad X: Mi país</a>
 </h3>
 <div class='post-header'>
 <div class='post-header-line-1'></div>
@@ -660,7 +664,7 @@ Labels:
 <div class='post hentry'>
 <a name='2793729962376381999'></a>
 <h3 class='post-title entry-title'>
-<a href='prog_parvulo.php?uid=11'>Unidad XI: Navidad </a>
+<a href='prog_parvulo.php?prog=3&uid=11'>Unidad XI: Navidad </a>
 </h3>
 <div class='post-header'>
 <div class='post-header-line-1'></div>
@@ -721,67 +725,10 @@ Subscribe to:
 <script type="text/javascript">window.___gcfg = {'lang': 'en'};</script>
 </div></div>
 </div>
-<!-- Sidebar -->
 
-<div id='sidebar-wrapper-right'>
-<div class='sidebar2 section' id='sidebar2'><div class='widget PopularPosts' id='PopularPosts1'>
-<h2>Contenido</h2>
-<div class='widget-content popular-posts'>
-<ul>
-<li>
-<div class='item-thumbnail-only'>
-<div class='item-thumbnail'>
-<a href='2015/11/lorem-ipsum_50.html' target='_blank'>
-<img alt='' border='0' height='72' src='http://lh3.googleusercontent.com/_Zuzii37VUO4/Ta0nUFUhg6I/AAAAAAAAFoY/GToUxRYcteY/s72-c/Antartic-by-Kelly-Speelman.jpg' width='72'/>
-</a>
-</div>
-<div class='item-title'><a href='2015/11/lorem-ipsum_50.html'>Reglamento escolar </a></div>
-</div>
-<div style='clear: both;'></div>
-</li>
-<li>
-<div class='item-thumbnail-only'>
-<div class='item-thumbnail'>
-<a href='2015/11/lorem-ipsum_53.html' target='_blank'>
-<img alt='' border='0' height='72' src='http://lh3.googleusercontent.com/_Zuzii37VUO4/Ta0nUeMwXoI/AAAAAAAAFoc/7f0Um7OTgNg/s72-c/Antartic-by-Peter-Rejcek.jpg' width='72'/>
-</a>
-</div>
-<div class='item-title'><a href='2015/11/lorem-ipsum_53.html'>Actividades</a></div>
-</div>
-<div style='clear: both;'></div>
-</li>
-</ul>
-<div class='clear'></div>
-<span class='widget-item-control'>
-<span class='item-control blog-admin'>
-<a class='quickedit' href='http://www.blogger.com/rearrange?blogID=6852192370751838918&widgetType=PopularPosts&widgetId=PopularPosts1&action=editWidget&sectionId=sidebar2' onclick='return _WidgetManager._PopupConfig(document.getElementById("PopularPosts1"));' target='configPopularPosts1' title='Edit'>
-<img alt='' height='18' src='http://img1.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
-</a>
-</span>
-</span>
-<div class='clear'></div>
-</div>
-</div><div class='widget HTML' id='HTML3'>
-<h2 class='title'>Comentarios</h2>
-<div class='widget-content'>
-<script type="text/javascript">if(typeof jQuery == 'undefined'){document.write("<scr" + "ipt type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js'></scr" + "ipt>");}</script>
-<ul id="rssdata" style="display:none;"></ul><div id="rssloading">Loading...</div>
-<script type="text/javascript">
-
-jQuery.noConflict();
-
-if( ! jQuery().jGFeed ) { (function(jQuery){jQuery.extend({jGFeed:function(url,fnk,num,key){if(url==null){return false;}var gurl="http://ajax.googleapis.com/ajax/services/feed/load?v=1.0&callback=?&q="+url;if(num!=null){gurl+="&num="+num;}if(key!=null){gurl+="&key="+key;}jQuery.getJSON(gurl,function(data){if(typeof fnk=="function"){fnk.call(this,data.responseData.feed);}else{return false;}});}});})(jQuery); }
-jQuery.jGFeed('http://btemplates.com/feed/',
-function(feeds){
-if(!feeds){return false;}
-for (var i=0; i < feeds.entries.length; i++) {
-	var item = feeds.entries[i];
-	var item_html = '<li><a href="'+item.link+'">'+item.title+'</a></li>';
-	jQuery('#rssdata').append(item_html);
-}
-jQuery('#rssloading').fadeOut();
-jQuery('#rssdata').slideDown();
-}, 5);</script>
+<?php
+  include('template/inicio_sesion.php');
+?>
 <script type="text/javascript" src="js/jquery.js"></script>
 <script type="text/javascript" src="js/coordenadas.js"></script>
 </div>
@@ -794,36 +741,6 @@ jQuery('#rssdata').slideDown();
 </span>
 </span>
 <div class='clear'></div>
-</div><div class='widget HTML' id='HTML2'>
-<h2 class='title'>Blogroll</h2>
-<div class='widget-content'>
-<ul><li><a href="http://btemplates.com" title="Blogger templates">BTemplates</a></li><li><a href="http://blog.btemplates.com">BTemplates Blog</a></li><li><a href="http://www.ipietoon.com/">Ipietoon</a></li></ul>
-</div>
-<div class='clear'></div>
-<span class='widget-item-control'>
-<span class='item-control blog-admin'>
-<a class='quickedit' href='http://www.blogger.com/rearrange?blogID=6852192370751838918&widgetType=HTML&widgetId=HTML2&action=editWidget&sectionId=sidebar2' onclick='return _WidgetManager._PopupConfig(document.getElementById("HTML2"));' target='configHTML2' title='Edit'>
-<img alt='' height='18' src='http://img1.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
-</a>
-</span>
-</span>
-<div class='clear'></div>
-</div><div class='widget HTML' id='HTML1'>
-<h2 class='title'>About</h2>
-<div class='widget-content'>
-Mel putent quaeque an, ut postea melius denique sit. Officiis sensibus at mea, sea at labitur deserunt. Eam dicam congue soluta ut. <a href='http://btemplates.com'>Blogger Templates</a>
-</div>
-<div class='clear'></div>
-<span class='widget-item-control'>
-<span class='item-control blog-admin'>
-<a class='quickedit' href='http://www.blogger.com/rearrange?blogID=6852192370751838918&widgetType=HTML&widgetId=HTML1&action=editWidget&sectionId=sidebar2' onclick='return _WidgetManager._PopupConfig(document.getElementById("HTML1"));' target='configHTML1' title='Edit'>
-<img alt='' height='18' src='http://img1.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
-</a>
-</span>
-</span>
-<div class='clear'></div>
-</div></div>
-</div>
 <!-- spacer for skins that want sidebar and main to be the same height-->
 <div class='clear'>&#160;</div>
 </div>

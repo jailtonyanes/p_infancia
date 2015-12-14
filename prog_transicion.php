@@ -177,11 +177,11 @@ if (window.jstiming) window.jstiming.load.tick('headEnd');
 </h3>
 		</li>
 		<ul>
-			<li><a href="tematica.php?uid2=1&unidad=<?php echo $unidad ?>">Pre-matemáticas</a></li>
-			<li><a href="tematica.php?uid2=2&unidad=<?php echo $unidad ?>">Pre-escritura</a></li>
-			<li><a href="tematica.php?uid2=3&unidad=<?php echo $unidad ?>">Motricidad Fina</a></li>
-			<li><a href="tematica.php?uid2=4&unidad=<?php echo $unidad ?>">Motricidad Gruesa</a></li>
-			<li><a href="tematica.php?uid2=5&unidad=<?php echo $unidad ?>">Lenguaje</a></li>
+			<li><a href="tematica.php?prog=<?php echo $_GET['prog'] ?>&uid2=1&unidad=<?php echo $unidad ?>">Pre-matemáticas</a></li>
+			<li><a href="tematica.php?prog=<?php echo $_GET['prog'] ?>&uid2=2&unidad=<?php echo $unidad ?>">Pre-escritura</a></li>
+			<li><a href="tematica.php?prog=<?php echo $_GET['prog'] ?>&uid2=3&unidad=<?php echo $unidad ?>">Motricidad Fina</a></li>
+			<li><a href="tematica.php?prog=<?php echo $_GET['prog'] ?>&uid2=4&unidad=<?php echo $unidad ?>">Motricidad Gruesa</a></li>
+			<li><a href="tematica.php?prog=<?php echo $_GET['prog'] ?>&uid2=5&unidad=<?php echo $unidad ?>">Lenguaje</a></li>
 		</ul>
 		
 	
@@ -193,7 +193,7 @@ if (window.jstiming) window.jstiming.load.tick('headEnd');
       
 </div>
 <div class='blog-pager' id='blog-pager'>
-<a class='home-link' href='p_transicion.php'>Regresar</a>
+<a class='home-link' href='p_transicion.php?prog=4'>Regresar</a>
 </div>
 <div class='clear'></div>
 <div class='blog-feeds'>

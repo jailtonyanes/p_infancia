@@ -1,27 +1,27 @@
 <?php
 $grado="";
-if(isset($_GET['uid']))
+if(isset($_GET['prog']))
 {
-	  if($_GET['uid']=='1')
+	  if($_GET['prog']=='1')
 	  {
-	   $grado="(Jardín)";
+	   $grado="(Jard&iacute;n)";
 	  }
 	  else
 	   {
-	      if($_GET['uid']=='2')
+	      if($_GET['prog']=='2')
 	      {
-	     $grado="(Pre-jardín)";
+	     $grado="(Pre-jard&iacute;n)";
 	      }
 	     else
 	      {
-	        if($_GET['uid']=='3')
+	        if($_GET['prog']=='3')
            
 			    {
-			     $grado="(Párvulo)";
+			     $grado="(P&aacute;rvulo)";
 			    }
 			    else
 			    {
-			       $grado="(Transición)"; 
+			       $grado="(Transici&oacute;n)"; 
 			    }
 	      }
 	   }

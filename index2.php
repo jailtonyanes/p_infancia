@@ -665,18 +665,20 @@ Subscribe to:
 <!-- spacer for skins that want sidebar and main to be the same height-->
 <!-- PQR!-->
 <div id='sidebar-wrapper-right'>
-<div class='sidebar2 section' id='sidebar3'><div class='widget PopularPosts' id='PopularPosts2'>
-<h2>Menú Principal</h2>
-<div class='widget-content popular-posts'>
-    <ul>
-        <li><a href="revisa_pqr.php">Ver comentarios</a></li>
-        <li><a href=""></a></li>
-        <li><a href=""></a></li>
-    </ul>
+    <div class='sidebar2 section' id='sidebar3'>
+        <div class='widget PopularPosts' id='PopularPosts2'>
+            <h2>Menú Principal</h2>
+            <div class='widget-content popular-posts'>
+                <ul>
+                    <li><a href="revisa_pqr.php">Ver comentarios</a></li>
+                    <li><a href=""></a></li>
+                    <li><a href=""></a></li>
+                </ul>
 
 
-</div>
-</div></div>
+            </div>
+        </div>
+    </div>
 </div>
 <!-- PQR!-->
 <div class='clear'>&#160;</div>

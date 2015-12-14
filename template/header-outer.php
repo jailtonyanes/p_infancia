@@ -3,7 +3,7 @@
 		<div id='header-inner'>
 		<div class='titlewrapper'>
 		<h1 class='title'>
-		Corporación Politécnico de Magangué
+		Corporaci&oacute;n Polit&eacute;cnico de Magangu&eacute;
 		</h1>
 		</div>
 		<div class='descriptionwrapper'>
