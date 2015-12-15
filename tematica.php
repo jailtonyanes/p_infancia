@@ -1,10 +1,17 @@
 <?php
+<<<<<<< HEAD
   
+=======
+>>>>>>> 6b0d4a833cece91aa27fc48302ba15e2490a501c
   session_start();
   if(!isset($_SESSION['user_authorized'])) header("Location:index.php");
 ?>
 <?php
+<<<<<<< HEAD
  //header('Content-Type: text/html; charset=ISO-8859-1'); 
+=======
+ header('Content-Type: text/html; charset=ISO-8859-1'); 
+>>>>>>> 6b0d4a833cece91aa27fc48302ba15e2490a501c
  include('_include/configuration.php');
  include('_classes/conectar.php');
  include('_classes/crud.php');
@@ -214,7 +221,11 @@ if (window.jstiming) window.jstiming.load.tick('headEnd');
              ?>
              <li>
                     
+<<<<<<< HEAD
              <?php echo utf8_encode($piezas[$cont]); ?>
+=======
+             <?php echo htmlentities($piezas[$cont]); ?>
+>>>>>>> 6b0d4a833cece91aa27fc48302ba15e2490a501c
             </li>
           <?php
                  }

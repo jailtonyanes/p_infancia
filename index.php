@@ -24,11 +24,15 @@
             $_SESSION['password'] = $datos1[0]['usuario_password'];
             $_SESSION['nick'] = $datos1[0]['usuario_nick'];
             $_SESSION['tipo'] = $datos1[0]['usuario_tipo'];
+<<<<<<< HEAD
             ?>
 <script type="text/javascript">
     location.href="index2.php";
 </script>
             <?php
+=======
+            header("Location: index2.php"); 
+>>>>>>> 6b0d4a833cece91aa27fc48302ba15e2490a501c
     }
     else
     {
