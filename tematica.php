@@ -1,17 +1,9 @@
 <?php
-<<<<<<< HEAD
-  
-=======
->>>>>>> 6b0d4a833cece91aa27fc48302ba15e2490a501c
   session_start();
   if(!isset($_SESSION['user_authorized'])) header("Location:index.php");
 ?>
 <?php
-<<<<<<< HEAD
- //header('Content-Type: text/html; charset=ISO-8859-1'); 
-=======
  header('Content-Type: text/html; charset=ISO-8859-1'); 
->>>>>>> 6b0d4a833cece91aa27fc48302ba15e2490a501c
  include('_include/configuration.php');
  include('_classes/conectar.php');
  include('_classes/crud.php');
@@ -204,7 +196,7 @@ if (window.jstiming) window.jstiming.load.tick('headEnd');
             <h3> <?php  echo $titulo[0]['nombre_unidad_int'] ?></h3>
         </li>
 
-       <ul>
+       <ul onclick ="javascript:redirecto('<?php echo $_GET['prog']?>','<?php echo $_GET['unidad']?>','<?php echo $_GET['uid2']?>')">
             <?php
    $crud2 = new CRUD();
    $crud2->setConsulta("SELECT * FROM contenido WHERE proyecto = '$_GET[prog]' AND unidad ='$_GET[unidad]' AND unidad_integrada_id= '$_GET[uid2]'  ");
@@ -221,11 +213,7 @@ if (window.jstiming) window.jstiming.load.tick('headEnd');
              ?>
              <li>
                     
-<<<<<<< HEAD
-             <?php echo utf8_encode($piezas[$cont]); ?>
-=======
              <?php echo htmlentities($piezas[$cont]); ?>
->>>>>>> 6b0d4a833cece91aa27fc48302ba15e2490a501c
             </li>
           <?php
                  }
@@ -279,7 +267,8 @@ Subscribe to:
   include('template/inicio_sesion.php');
 ?>
 <script type="text/javascript" src="js/jquery.js"></script>
-<script type="text/javascript" src="js/coordenadas.js"></script>
+<script type="text/javascript" src="js/tema
+.js"></script>
 </div>
 
 <!-- spacer for skins that want sidebar and main to be the same height-->
