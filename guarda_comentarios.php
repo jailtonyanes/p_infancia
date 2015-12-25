@@ -21,3 +21,4 @@ $crud->insertar($array,$campos,$tabla,$con->getConection(),'Comentario Ingresado
   $con-> desconectar();
   
 ?>
+

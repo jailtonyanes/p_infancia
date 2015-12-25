@@ -121,8 +121,7 @@ function createSummaryAndThumb(pID){
 if (window.jstiming) window.jstiming.load.tick('headEnd');
 </script></head>
 <body>
-<div id='header-outer'   background:url('<?php echo $background ?>') no-repeat center">
-	
+<div id='header-outer' style="cursor: pointer;  background:url('<?php echo $background ?>') no-repeat center">
 	<?php include('template/header-outer.php'); ?>	
 </div>
 <div id='NavbarMenu'>
@@ -224,6 +223,7 @@ if (window.jstiming) window.jstiming.load.tick('headEnd');
 </div>
 <div class='clear'></div>
 <div class='blog-feeds'>
+
 <div class='feed-links'>
 Subscribe to:
 <a class='feed-link' href='http://kiddiezshop-btemplates.blogspot.com/feeds/posts/default' target='_blank' type='application/atom+xml'>Posts (Atom)</a>
@@ -236,69 +236,6 @@ Subscribe to:
 </div></div>
 </div>
 <!-- Sidebar -->
-<!-- <div id='sidebar-wrapper-right'>
-<div class='sidebar2 section' id='sidebar2'><div class='widget PopularPosts' id='PopularPosts1'>
-<h2>Ingreso de usuarios</h2>
-<div class='widget-content popular-posts'>
-    <form id="login" name="login" method="post" action=" " class="post2">
-    	   <p>
-	       <label for="usuario">Usuario</label>
-	       <br /> 
-	         <input type="text" name="usuario" id="usuario" />
-	      
-	     </p>
-	     <p>
-	       <label for="password">Contrase&ntilde;a </label>
-	       <br />
-	         <input type="password" name="password" id="password" />
-	      
-	     </p>
-	     <p>
-	       <label>
-	         <input type="submit" name="login2" id="login2" value="Entrar" />
-	       </label>
-	     </p>
-    	
-    </form>
-
-</div>
-</div></div>
-</div> -->
-<!-- spacer for skins that want sidebar and main to be the same height-->
-<!-- PQR!-->
-<!-- <div id='sidebar-wrapper-right'>
-<div class='sidebar2 section' id='sidebar3'><div class='widget PopularPosts' id='PopularPosts2'>
-<h2>Ayúdanos a mejorar</h2>
-<div class='widget-content popular-posts'>
-    <form id="comentario" name="comentario" method="post" action=" " class="post2">
-    	  
-	       <label for="usuario">Quiero expresar una:</label>
-	       <br /> 
-	         <select name="tipo_com" id="tipo_com" class="select">
-	         	 <option selected="selected" value="felicitacion">Felicitación</option>
-	         	 <option value="sugerencia">Sugerencia</option>
-	         	 <option value="no_conformidad">No conformidad</option>
-	         </select> 
-	      
-	   
-	   <br />
-	   <br />
-	  
-	   <label for="coment">Escribe tu comentario</label>
-	       <br />
-	          <textarea rows="4" cols="21" id="coment" name="coment">
-
-</textarea> 
-	      
-	  
-	     <p style="padding-left:63px">
-	       <label>
-	         <input type="button" name="pqr" id="pqr" value="Enviar" onclick="javascript:ingresar_comentarios()" />
-	       </label>
-	     </p>
-    	
-    </form>
-
 </div>
 </div></div>
 </div> -->

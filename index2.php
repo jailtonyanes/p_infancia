@@ -58,34 +58,34 @@ img_thumb_width = 190;
 //<![CDATA[
 
 function removeHtmlTag(strx,chop){ 
-	if(strx.indexOf("<")!=-1)
-	{
-		var s = strx.split("<"); 
-		for(var i=0;i<s.length;i++){ 
-			if(s[i].indexOf(">")!=-1){ 
-				s[i] = s[i].substring(s[i].indexOf(">")+1,s[i].length); 
-			} 
-		} 
-		strx =  s.join(""); 
-	}
-	chop = (chop < strx.length-1) ? chop : strx.length-2; 
-	while(strx.charAt(chop-1)!=' ' && strx.indexOf(' ',chop)!=-1) chop++; 
-	strx = strx.substring(0,chop-1); 
-	return strx+'...'; 
+  if(strx.indexOf("<")!=-1)
+  {
+    var s = strx.split("<"); 
+    for(var i=0;i<s.length;i++){ 
+      if(s[i].indexOf(">")!=-1){ 
+        s[i] = s[i].substring(s[i].indexOf(">")+1,s[i].length); 
+      } 
+    } 
+    strx =  s.join(""); 
+  }
+  chop = (chop < strx.length-1) ? chop : strx.length-2; 
+  while(strx.charAt(chop-1)!=' ' && strx.indexOf(' ',chop)!=-1) chop++; 
+  strx = strx.substring(0,chop-1); 
+  return strx+'...'; 
 }
 
 function createSummaryAndThumb(pID){
-	var div = document.getElementById(pID);
-	var imgtag = "";
-	var img = div.getElementsByTagName("img");
-	var summ = summary_noimg;
-	if(img.length>=1) {	
-		imgtag = '<span style="float:left; padding:0px 10px 5px 0px;"><img src="'+img[0].src+'" width="'+img_thumb_width+'px" height="'+img_thumb_height+'px"/></span>';
-		summ = summary_img;
-	}
-	
-	var summary = imgtag + '<div>' + removeHtmlTag(div.innerHTML,summ) + '</div>';
-	div.innerHTML = summary;
+  var div = document.getElementById(pID);
+  var imgtag = "";
+  var img = div.getElementsByTagName("img");
+  var summ = summary_noimg;
+  if(img.length>=1) { 
+    imgtag = '<span style="float:left; padding:0px 10px 5px 0px;"><img src="'+img[0].src+'" width="'+img_thumb_width+'px" height="'+img_thumb_height+'px"/></span>';
+    summ = summary_img;
+  }
+  
+  var summary = imgtag + '<div>' + removeHtmlTag(div.innerHTML,summ) + '</div>';
+  div.innerHTML = summary;
 }
 
 
@@ -100,8 +100,8 @@ function createSummaryAndThumb(pID){
 if (window.jstiming) window.jstiming.load.tick('headEnd');
 </script></head>
 <body>
-<div id='header-outer' style="background:url('imagenes/home.jpg') no-repeat center">
-	<?php include('template/header-outer.php'); ?>	
+<div id='header-outer' style="cursor: pointer;  background:url('imagenes/home.jpg') no-repeat center">
+  <?php include('template/header-outer.php'); ?>  
 </div>
 <div id='NavbarMenu'>
 <div class='navbarleft'>
@@ -137,14 +137,14 @@ if (window.jstiming) window.jstiming.load.tick('headEnd');
 <div class='main section' id='main'><div class='widget Blog' id='Blog1'>
 <div class='blog-posts hfeed'>
 
-	<div class="date-outer">
+  <div class="date-outer">
 
-		<h2 class='date-header'><span>Wednesday, November 18, 2015</span></h2>
+    <h2 class='date-header'><span>Wednesday, November 18, 2015</span></h2>
 
-		<div class="date-posts">
+    <div class="date-posts">
 
 
-			<div class='post-outer'>
+      <div class='post-outer'>
                     <h2 style="padding-left:39%">LA INSTITUCIÓN </h2>
       <!-- Carrusel 1 -->
       <div id="slidebox">
@@ -269,11 +269,11 @@ if (window.jstiming) window.jstiming.load.tick('headEnd');
 
       <!-- fin Carrusel 5 -->
 
-			</div>
+      </div>
 
 
-		</div>
-	</div>
+    </div>
+  </div>
       
 </div>
 <div class='blog-pager' id='blog-pager'>

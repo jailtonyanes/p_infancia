@@ -87,6 +87,7 @@ function createSummaryAndThumb(pID){
 if (window.jstiming) window.jstiming.load.tick('headEnd');
 </script></head>
 <body>
+
 <div id='header-outer' style="cursor: pointer;  background:url('imagenes/home.jpg') no-repeat center">
 	<?php include('template/header-outer.php'); ?>	
 </div>
@@ -112,6 +113,7 @@ if (window.jstiming) window.jstiming.load.tick('headEnd');
 </div>
 </div></div>
 </div>
+
 </div>
 <div id='wrap'>
 <div id='wrap-inner'>
@@ -237,6 +239,7 @@ Subscribe to:
 </div>
 <div id='credit-wrapper'>
 <div id='credit'>
+
 <a href='index.html'>Corporacón Politécnico de Magangué Nit: N° 900.170.599-2 Resolución: N° 4052(Dic 15-210) </a> 
 </div></div>
 

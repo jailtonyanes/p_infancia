@@ -89,7 +89,7 @@ function createSummaryAndThumb(pID){
 if (window.jstiming) window.jstiming.load.tick('headEnd');
 </script></head>
 <body>
-  <div id='header-outer'   background:url('imagenes/header-3.jpg') no-repeat center">
+  <div id='header-outer' style="cursor: pointer;  background:url('imagenes/header-3.jpg') no-repeat center">
 	<?php include('template/header-outer.php'); ?>	
   </div>
 
@@ -1092,3 +1092,4 @@ _WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML1', 'sidebar2',
 </script>
 </body>
 </html>
+

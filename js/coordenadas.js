@@ -38,26 +38,33 @@ $(document).ready(function(){
     if(posX>=137 && posX<=244 && posY>=134 && posY <=204)
     {
      window.location.href='p_jardin.php?prog='+1;
-     
+
+
     }
     else
     {
       if(posX>=397 && posX<=534 && posY>=196 && posY <=292)
        {
+
          window.location.href='p_parvulo.php?prog='+3;
+
 
        }
        else
        {
          if(posX>=529 && posX<=663 && posY>=98 && posY <=194)
          {
+
             window.location.href='p_transicion.php?prog='+4; 	
+
          }	
          else
          {
          	if(posX>=703 && posX<=837 && posY>=107 && posY <=196)
 	         {
+
 	           	  window.location.href='p_prejardin.php?prog='+2;    
+
 	         }
          }
        }	

@@ -1,4 +1,5 @@
 <?php 
+
     include('_include/configuration.php');
   include('_classes/conectar.php');
   include('_classes/crud.php');
@@ -111,34 +112,34 @@ img_thumb_width = 190;
 //<![CDATA[
 
 function removeHtmlTag(strx,chop){ 
-	if(strx.indexOf("<")!=-1)
-	{
-		var s = strx.split("<"); 
-		for(var i=0;i<s.length;i++){ 
-			if(s[i].indexOf(">")!=-1){ 
-				s[i] = s[i].substring(s[i].indexOf(">")+1,s[i].length); 
-			} 
-		} 
-		strx =  s.join(""); 
-	}
-	chop = (chop < strx.length-1) ? chop : strx.length-2; 
-	while(strx.charAt(chop-1)!=' ' && strx.indexOf(' ',chop)!=-1) chop++; 
-	strx = strx.substring(0,chop-1); 
-	return strx+'...'; 
+  if(strx.indexOf("<")!=-1)
+  {
+    var s = strx.split("<"); 
+    for(var i=0;i<s.length;i++){ 
+      if(s[i].indexOf(">")!=-1){ 
+        s[i] = s[i].substring(s[i].indexOf(">")+1,s[i].length); 
+      } 
+    } 
+    strx =  s.join(""); 
+  }
+  chop = (chop < strx.length-1) ? chop : strx.length-2; 
+  while(strx.charAt(chop-1)!=' ' && strx.indexOf(' ',chop)!=-1) chop++; 
+  strx = strx.substring(0,chop-1); 
+  return strx+'...'; 
 }
 
 function createSummaryAndThumb(pID){
-	var div = document.getElementById(pID);
-	var imgtag = "";
-	var img = div.getElementsByTagName("img");
-	var summ = summary_noimg;
-	if(img.length>=1) {	
-		imgtag = '<span style="float:left; padding:0px 10px 5px 0px;"><img src="'+img[0].src+'" width="'+img_thumb_width+'px" height="'+img_thumb_height+'px"/></span>';
-		summ = summary_img;
-	}
-	
-	var summary = imgtag + '<div>' + removeHtmlTag(div.innerHTML,summ) + '</div>';
-	div.innerHTML = summary;
+  var div = document.getElementById(pID);
+  var imgtag = "";
+  var img = div.getElementsByTagName("img");
+  var summ = summary_noimg;
+  if(img.length>=1) { 
+    imgtag = '<span style="float:left; padding:0px 10px 5px 0px;"><img src="'+img[0].src+'" width="'+img_thumb_width+'px" height="'+img_thumb_height+'px"/></span>';
+    summ = summary_img;
+  }
+  
+  var summary = imgtag + '<div>' + removeHtmlTag(div.innerHTML,summ) + '</div>';
+  div.innerHTML = summary;
 }
 
 
@@ -156,12 +157,8 @@ if (window.jstiming) window.jstiming.load.tick('headEnd');
 <?php 
    
 ?>  
-<div id='header-outer' style="background:url('imagenes/home.jpg') no-repeat center;">
-	
-  <?php include('template/header-outer.php'); ?>
-
-
-
+<div id='header-outer' style="cursor: pointer;   background:url('imagenes/home.jpg') no-repeat center;">
+  <?php include('template/header-outer.php'); ?>  
 </div>
 <div id='NavbarMenu'>
 <div class='navbarleft'>
@@ -197,11 +194,11 @@ if (window.jstiming) window.jstiming.load.tick('headEnd');
 <div class='main section' id='main'><div class='widget Blog' id='Blog1'>
 <div class='blog-posts hfeed'>
 
-	<div class="date-outer">
+  <div class="date-outer">
 
-		<h2 class='date-header'><span>Wednesday, November 18, 2015</span></h2>
+    <h2 class='date-header'><span>Wednesday, November 18, 2015</span></h2>
 
-		<div class="date-posts">
+    <div class="date-posts">
 
 
 <div class='post-outer' >
@@ -258,8 +255,8 @@ if (window.jstiming) window.jstiming.load.tick('headEnd');
 </div>
 
 
-		</div>
-	</div>
+    </div>
+  </div>
       
 </div>
 <div class='blog-pager' id='blog-pager'>
@@ -414,24 +411,24 @@ $(function() {
 <h2>Ingreso de usuarios</h2>
 <div class='widget-content popular-posts'>
     <form id="login" name="login" method="post" action=" " class="post2">
-    	   <p>
-	       <label for="usuario">Usuario</label>
-	       <br /> 
-	         <input type="text" name="usuario" id="usuario" />
-	      
-	     </p>
-	     <p>
-	       <label for="password">Contrase&ntilde;a </label>
-	       <br />
-	         <input type="password" name="password" id="password" />
-	      
-	     </p>
-	     <p>
-	       <label>
-	         <input type="submit" name="login2" id="login2" value="Entrar" />
-	       </label>
-	     </p>
-    	
+         <p>
+         <label for="usuario">Usuario</label>
+         <br /> 
+           <input type="text" name="usuario" id="usuario" />
+        
+       </p>
+       <p>
+         <label for="password">Contrase&ntilde;a </label>
+         <br />
+           <input type="password" name="password" id="password" />
+        
+       </p>
+       <p>
+         <label>
+           <input type="submit" name="login2" id="login2" value="Entrar" />
+         </label>
+       </p>
+      
     </form>
 
 </div>
@@ -473,32 +470,32 @@ $(function() {
 <h2>Ayúdanos a mejorar</h2>
 <div class='widget-content popular-posts'>
     <form id="comentario" name="comentario" method="post" action=" " class="post2">
-    	  
-	       <label for="usuario">Quiero expresar una:</label>
-	       <br /> 
-	         <select name="asunto" id="asunto" class="select">
-	         	 <option selected="selected" value="Felicitacion">Felicitación</option>
-	         	 <option value="Sugerencia">Sugerencia</option>
-	         	 <option value="No conformidad">No conformidad</option>
-	         </select> 
-	      
-	   
-	   <br />
-	   <br />
-	  
-	   <label for="coment">Escribe tu comentario</label>
-	       <br />
-	          <textarea rows="4" cols="21" id="mensaje" name="mensaje">
+        
+         <label for="usuario">Quiero expresar una:</label>
+         <br /> 
+           <select name="asunto" id="asunto" class="select">
+             <option selected="selected" value="Felicitacion">Felicitación</option>
+             <option value="Sugerencia">Sugerencia</option>
+             <option value="No conformidad">No conformidad</option>
+           </select> 
+        
+     
+     <br />
+     <br />
+    
+     <label for="coment">Escribe tu comentario</label>
+         <br />
+            <textarea rows="4" cols="21" id="mensaje" name="mensaje">
 
 </textarea> 
-	      
-	  
-	     <p style="padding-left:63px">
-	       <label>
-	         <input type="button" name="pqr" id="pqr" value="Enviar" onclick="javascript:ingresar_comentarios()" />
-	       </label>
-	     </p>
-    	
+        
+    
+       <p style="padding-left:63px">
+         <label>
+           <input type="button" name="pqr" id="pqr" value="Enviar" onclick="javascript:ingresar_comentarios()" />
+         </label>
+       </p>
+      
     </form>
 
 </div>

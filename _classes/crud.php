@@ -28,7 +28,11 @@
             }
             else
             {
+
               echo '';
+
+              echo 'No hay registros asociados a la consulta.';
+
             }
        } 
        else
@@ -87,8 +91,11 @@
 
       public function update($consulta,$mensaje,$conexion)
       {
-          
+
        $query =$consulta;
+
+         $query =$consulta;
+
          $result= mysql_query($query,$conexion);
          if($result)
          {
@@ -100,8 +107,7 @@
          }
 
       } 
-      
-     
+
   
   //eliminar
       public function eliminar($tabla,$conexion,$condicion,$mensaje)

@@ -8,6 +8,7 @@
   else
   {
   	header("Location:index.php");
+
   }
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -87,7 +88,7 @@ function createSummaryAndThumb(pID){
 if (window.jstiming) window.jstiming.load.tick('headEnd');
 </script></head>
 <body>
-  <div id='header-outer'   background:url('imagenes/header-1.jpg') no-repeat center">
+  <div id='header-outer' style="cursor: pointer;  background:url('imagenes/header-1.jpg') no-repeat center">
 	<?php include('template/header-outer.php'); ?>	
   </div>
 
