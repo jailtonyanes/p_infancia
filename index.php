@@ -157,7 +157,7 @@ if (window.jstiming) window.jstiming.load.tick('headEnd');
 <?php 
    
 ?>  
-<div id='header-outer' style="cursor: pointer;   background:url('imagenes/home.jpg') no-repeat center;">
+<div id='header-outer' style="background:url('imagenes/home.jpg') no-repeat center;">
   <?php include('template/header-outer.php'); ?>  
 </div>
 <div id='NavbarMenu'>

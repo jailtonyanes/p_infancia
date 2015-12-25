@@ -141,7 +141,7 @@ function createSummaryAndThumb(pID){
 if (window.jstiming) window.jstiming.load.tick('headEnd');
 </script></head>
 <body>
-  <div id='header-outer' style="cursor: pointer;  background:url('imagenes/home.jpg') no-repeat center">
+  <div id='header-outer' style="background:url('imagenes/home.jpg') no-repeat center">
 	<?php include('template/header-outer.php'); ?>	
   </div>
 
