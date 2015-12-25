@@ -128,7 +128,7 @@ function createSummaryAndThumb(pID){
 if (window.jstiming) window.jstiming.load.tick('headEnd');
 </script></head>
 <body>
-  <div id='header-outer'>
+  <div id='header-outer' style="cursor: pointer;  background:url('imagenes/home.jpg') no-repeat center">
 	<?php include('template/header-outer.php'); ?>	
   </div>
 
@@ -326,7 +326,7 @@ Mel putent quaeque an, ut postea melius denique sit. Officiis sensibus at mea, s
 </div>
 <div id='credit-wrapper'>
 <div id='credit'>
-<a href='index.html'>Kiddiez Shop</a> Copyright &#169; 2012  Design by Ipietoon <a href='http://www.ipietoon.com/' target='_blank'>Blogger Template</a>
+<a href='index.html'>Corporacón Politécnico de Magangué Nit: N° 900.170.599-2 Resolución: N° 4052(Dic 15-210) </a> 
 </div></div>
 <script type="text/javascript">
 if (window.jstiming) window.jstiming.load.tick('widgetJsBefore');

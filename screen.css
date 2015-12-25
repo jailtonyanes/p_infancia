@@ -5,6 +5,60 @@ Kiddiez Shop Template
 Code by www.ipietoon.com
 Nov 2012
 ----------------------------------------------- */
+
+  #jardin:hover{
+
+       background:url('imagenes/header-1.jpg') no-repeat center;
+       background-position: 4.8% 35%;
+       cursor:pointer;
+
+  }
+  #parvulo:hover{
+
+       background:url('imagenes/parvulo_hover.jpg') no-repeat center;
+       background-position: 4.8% 35%;
+       cursor:pointer;
+
+  }
+
+#transicion:hover{
+
+       background:url('imagenes/transicion_hover.jpg') no-repeat center;
+       background-position: 4.8% 35%;
+       cursor:pointer;
+
+  }
+  #prejardin:hover{
+
+       background:url('imagenes/pre_jardin_hover.jpg') no-repeat center;
+       background-position: 4.8% 35%;
+       cursor:pointer;
+
+  }
+
+#ingreso p
+{ 
+  padding-left: 5px;
+
+}
+.ancho
+{
+   width: 238px;
+}
+.ancho2
+{
+   width: 244px;
+}
+
+#ingreso_usuario p{
+	padding-left:10%;
+}
+#ingreso_usuario h2{
+	text-align:center;
+}
+.campo_formulario{
+	width: 200px;
+}
 #layout #NavbarMenu {
 display: block;
 clear: both;
@@ -49,7 +103,7 @@ border-width: 0;
 /* Header
 -----------------------------------------------*/
 #header-outer{
-   background:url("imagenes/marco2.jpg") no-repeat center;
+  
    width: 1000px;
 height: 435px;
 color: #D45500;
@@ -80,6 +134,7 @@ line-height:1.2em;
 text-transform:titlecase;
 letter-spacing:.1em;
 text-align:center;
+text-shadow: -2px -2px 1px #000, 2px 2px 1px #000, -2px 2px 1px #000, 2px -2px 1px #000;
 }
 #header a {
 text-decoration:none;
@@ -420,6 +475,10 @@ margin: .2em 0 0;
 }
 #PageList1 h2, #Pagelist2 h2{ display:none;}
 
+#login p
+{
+	padding-left: 25px;
+}
 
 /* Posts
 -----------------------------------------------
@@ -436,6 +495,17 @@ position:relative;
 width:190px;
   }
 
+  .post2 {
+border:1px solid #f3f7eb;
+float:left;
+
+margin:14px 28px 14px 0px;
+overflow:hidden;
+padding:15px 5px 5px 5px;
+position:relative;
+width:190px;
+  }
+
 .post h3 {
 top:5px;
 font-size:14px;
@@ -444,6 +514,11 @@ position: absolute;
 text-align:center;
 line-height:17px;
 font-family: 'Oldenburg', cursive;
+}
+
+.select
+{
+	width: 191px;
 }
 
 .post h3 a, .post h3 a:visited {

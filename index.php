@@ -1,3 +1,70 @@
+<?php 
+    include('_include/configuration.php');
+  include('_classes/conectar.php');
+  include('_classes/crud.php');
+
+  $con = new Coneccion($server,$user,$password,$dbname);
+  $con->conectar();
+  $crud = new Crud();
+ session_start();
+  if(isset($_SESSION['user_authorized'])) {session_destroy();}
+?>
+<?php
+ if(isset($_POST['login2']) )
+ { 
+    
+    $crud->setConsulta(" SELECT * from usuario WHERE usuario_nick ='$_POST[usuario]' AND usuario_password='$_POST[password]' and usuario_active='1'");
+    $datos1 = $crud->seleccionar($con->getConection());
+    
+    if($crud->getTuplas()>0)
+    {
+            $_SESSION['user_authorized'] = true;
+            $_SESSION['nombre'] = $datos1[0]['usuario_nombre'];;
+            $_SESSION['apellido'] = $datos1[0]['usuario_apellido'];
+            $_SESSION['password'] = $datos1[0]['usuario_password'];
+            $_SESSION['nick'] = $datos1[0]['usuario_nick'];
+            $_SESSION['tipo'] = $datos1[0]['usuario_tipo'];
+            $_SESSION['perfil'] = $datos1[0]['usuario_perfil'];
+
+          
+      
+           if($datos1[0]['usuario_password']=='1234')
+           {
+             ?>
+              <script type="text/javascript">
+              location.href="cambio_password.php";
+              </script>
+           
+            <?php
+           }
+           else
+           {
+             ?>
+                <script type="text/javascript">
+              location.href="index2.php";
+              </script>
+             <?php
+           }
+
+           
+          
+              
+          
+           
+
+           
+    }
+    else
+    {
+  ?>
+      <script type="text/javascript">
+      alert('Usuario o Password Incorrectos');
+      </script>
+   <?php
+    }
+ }
+ ?> 
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html dir='ltr' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
 <head>
@@ -23,9 +90,14 @@ Kiddiez Shop
 <link type='text/css' rel='stylesheet' href='https://www.blogger.com/static/v1/widgets/537653047-widget_css_bundle.css' />
 <link type='text/css' rel='stylesheet' href='https://www.blogger.com/dyn-css/authorization.css?targetBlogID=6852192370751838918&zx=7b04a788-0865-46f3-95bd-7f829e0d37ec' />
 <link rel="stylesheet" type="text/css" href="screen.css">
+<link rel="stylesheet" type="text/css" href="css/screen.css">
+<link rel="stylesheet" type="text/css" href="css/screen2.css">
+<link rel="stylesheet" type="text/css" href="css/screen3.css">
+<link rel="stylesheet" type="text/css" href="css/screen4.css">
+<link rel="stylesheet" type="text/css" href="css/screen5.css">
 
-
-
+  
+       
 
 
 
@@ -81,8 +153,15 @@ function createSummaryAndThumb(pID){
 if (window.jstiming) window.jstiming.load.tick('headEnd');
 </script></head>
 <body>
-<div id='header-outer'>
-	<?php include('template/header-outer.php'); ?>	
+<?php 
+   
+?>  
+<div id='header-outer' style="background:url('imagenes/home.jpg') no-repeat center;">
+	
+  <?php include('template/header-outer.php'); ?>
+
+
+
 </div>
 <div id='NavbarMenu'>
 <div class='navbarleft'>
@@ -118,335 +197,73 @@ if (window.jstiming) window.jstiming.load.tick('headEnd');
 <div class='main section' id='main'><div class='widget Blog' id='Blog1'>
 <div class='blog-posts hfeed'>
 
-          <div class="date-outer">
-        
-<h2 class='date-header'><span>Wednesday, November 18, 2015</span></h2>
+	<div class="date-outer">
 
-          <div class="date-posts">
+		<h2 class='date-header'><span>Wednesday, November 18, 2015</span></h2>
+
+		<div class="date-posts">
+
+
+<div class='post-outer' >
+       <h2 style="padding-left:30%">INSCRIPCIONES ABIERTAS </h2>
+      <!-- Carrusel 1 -->
+      <div id="slidebox">
+
+      <div class="next"></div>
+      <div class="previous"></div>
+      <div class="thumbs">
+      <a href="#" onClick="" class="1 thumbActive">1</a> 
+      <a href="#" onClick="" class="2">2</a> 
+         
+      
+      </div>
+        <ul>
+            <li><img src="img/in1.png"  alt="img1" /></li>
+            <li><img src="img/in2.jpg"  alt="img2" /></li>
         
-<div class='post-outer'>
-<div class='post hentry'>
-<a name='8178176466869786854'></a>
-<h3 class='post-title entry-title'>
-<a href='2015/11/lorem-ipsum_53.html'>Lorem Ipsum</a>
-</h3>
-<div class='post-header'>
-<div class='post-header-line-1'></div>
-</div>
-<div class='post-body entry-content' id='post-body-8178176466869786854'>
-<div id='summary8178176466869786854'><p><img src="http://lh3.googleusercontent.com/_Zuzii37VUO4/Ta0nUeMwXoI/AAAAAAAAFoc/7f0Um7OTgNg/s000/Antartic-by-Peter-Rejcek.jpg" alt="Antartic. By Peter Rejcek" width="500" height="332"></p><p>Download this and more <a href="http://btemplates.com/">Blogger Templates</a> at <a href="http://btemplates.com" style="border:0 !important;text-decoration:none !important; margin:0px !important; padding:0px; !important; background:none !important;" title="BTemplates"><img src="http://1.bp.blogspot.com/_zNpQsOlwuPA/S2lKsFgNlMI/AAAAAAAAAKw/0Qay8rrjLKQ/s000/btemplates-small.png" alt="BTemplates" style="border:0 !important;text-decoration:none !important; margin:0px !important; padding:0px;background:none !important;"></a>. For tutorials, tips and tricks about Blogger visit our <a title="Blogger Tutorials" href="http://blog.btemplates.com">Blog</a>.</p><p><strong>&#187; A normal paragraph</strong></p><p>Ea eam labores imperdiet, apeirian democritum ei nam, doming neglegentur ad vis. Ne malorum ceteros feugait quo, ius ea liber offendit placerat, est habemus aliquyam legendos id. Eam no corpora maluisset definitiones, eam mucius malorum id. Quo ea idque commodo utroque, per ex eros etiam accumsan.</p><p><strong>&#187; A paragraph format</strong></p><p>Et posse meliore <strong>definitiones (strong)</strong> his, vim <em>tritani vulputate (italic)</em> pertinacia at. <acronym title="Acronym">Augue quaerendum (Acronym)</acronym> te sea, ex <sub>sed</sub> <sup>sint</sup> <span style="text-decoration: line-through;">invenire erroribus</span>. Cu vel ceteros scripserit, te usu modus fabellas mediocritatem. In legere regione instructior eos. Ea repudiandae suscipiantur vim, vel partem labores ponderum in <a href="http://btemplates.com/" title="Templates for Blogger">blogger templates (link).</a></p><p><strong>&#187; A paragraph as code</strong></p><p><code>Mel putent quaeque an, ut postea melius denique sit. Officiis sensibus at mea, sea at labitur deserunt. Eam dicam congue soluta ut.</code></p><p><strong>&#187; A paragraph as blockquote</strong></p><blockquote><p>Eu mei solum oporteat eleifend, libris nominavi maiestatis duo at, quod dissentiet vel te. Legere prompta impedit id eum. Te soleat vocibus luptatum sed, augue dicta populo est ad, et consul diceret officiis duo. Et duo primis nostrum.</p></blockquote><p><strong>&#187; Unordered list</strong></p><ul><li>Blogger templates</li><li>Templates</li><li>Blogs</li><li>Layouts</li><li>Skins</li><li>BTemplates</li></ul><p><strong>&#187; Ordered list</strong></p><ol><li>Login</li><li>Visit <a href="http://btemplates.com/">BTemplates</a></li><li>Download template</li><li>Install</li><li>Enjoy!</li></ol><p><strong>&#187; Heading</strong></p><h1>Heading 1</h1><h2>Heading 2</h2><h3>Heading 3</h3><h4>Heading 4</h4><h5>Heading 5</h5><h6>Heading 6</h6><p><strong>&#187; A table</strong></p></div>
-<script type='text/javascript'>createSummaryAndThumb("summary8178176466869786854");</script>
-<p><img src="http://lh3.googleusercontent.com/_Zuzii37VUO4/Ta0nUeMwXoI/AAAAAAAAFoc/7f0Um7OTgNg/s000/Antartic-by-Peter-Rejcek.jpg" alt="Antartic. By Peter Rejcek" width="500" height="332"></p><p>Download this and more <a href="http://btemplates.com/">Blogger Templates</a> at <a href="http://btemplates.com" style="border:0 !important;text-decoration:none !important; margin:0px !important; padding:0px; !important; background:none !important;" title="BTemplates"><img src="http://1.bp.blogspot.com/_zNpQsOlwuPA/S2lKsFgNlMI/AAAAAAAAAKw/0Qay8rrjLKQ/s000/btemplates-small.png" alt="BTemplates" style="border:0 !important;text-decoration:none !important; margin:0px !important; padding:0px;background:none !important;"></a>. For tutorials, tips and tricks about Blogger visit our <a title="Blogger Tutorials" href="http://blog.btemplates.com">Blog</a>.</p><p><strong>&#187; A normal paragraph</strong></p><p>Ea eam labores imperdiet, apeirian democritum ei nam, doming neglegentur ad vis. Ne malorum ceteros feugait quo, ius ea liber offendit placerat, est habemus aliquyam legendos id. Eam no corpora maluisset definitiones, eam mucius malorum id. Quo ea idque commodo utroque, per ex eros etiam accumsan.</p><p><strong>&#187; A paragraph format</strong></p><p>Et posse meliore <strong>definitiones (strong)</strong> his, vim <em>tritani vulputate (italic)</em> pertinacia at. <acronym title="Acronym">Augue quaerendum (Acronym)</acronym> te sea, ex <sub>sed</sub> <sup>sint</sup> <span style="text-decoration: line-through;">invenire erroribus</span>. Cu vel ceteros scripserit, te usu modus fabellas mediocritatem. In legere regione instructior eos. Ea repudiandae suscipiantur vim, vel partem labores ponderum in <a href="http://btemplates.com/" title="Templates for Blogger">blogger templates (link).</a></p><p><strong>&#187; A paragraph as code</strong></p><p><code>Mel putent quaeque an, ut postea melius denique sit. Officiis sensibus at mea, sea at labitur deserunt. Eam dicam congue soluta ut.</code></p><p><strong>&#187; A paragraph as blockquote</strong></p><blockquote><p>Eu mei solum oporteat eleifend, libris nominavi maiestatis duo at, quod dissentiet vel te. Legere prompta impedit id eum. Te soleat vocibus luptatum sed, augue dicta populo est ad, et consul diceret officiis duo. Et duo primis nostrum.</p></blockquote><p><strong>&#187; Unordered list</strong></p><ul><li>Blogger templates</li><li>Templates</li><li>Blogs</li><li>Layouts</li><li>Skins</li><li>BTemplates</li></ul><p><strong>&#187; Ordered list</strong></p><ol><li>Login</li><li>Visit <a href="http://btemplates.com/">BTemplates</a></li><li>Download template</li><li>Install</li><li>Enjoy!</li></ol><p><strong>&#187; Heading</strong></p><h1>Heading 1</h1><h2>Heading 2</h2><h3>Heading 3</h3><h4>Heading 4</h4><h5>Heading 5</h5><h6>Heading 6</h6><p><strong>&#187; A table</strong></p>
-<div style='clear: both;'></div>
-</div>
-<div class='jump-link'>
-<a href='2015/11/lorem-ipsum_53.html#more' title='Lorem Ipsum'>Read more &#187;</a>
-</div>
-<div class='post-footer'>
-<div class='post-footer-line post-footer-line-1'><span class='post-author vcard'>
-Posted by
-<span class='fn'>BTemplates</span>
-</span>
-<span class='post-timestamp'>
-at
-<a class='timestamp-link' href='2015/11/lorem-ipsum_53.html' rel='bookmark' title='permanent link'><abbr class='published' title='2015-11-18T22:32:00-08:00'>10:32 PM</abbr></a>
-</span>
-<span class='post-comment-link'>
-</span>
-<span class='post-icons'>
-<span class='item-control blog-admin pid-1099626233'>
-<a href='https://www.blogger.com/post-edit.g?blogID=6852192370751838918&postID=8178176466869786854&from=pencil' title='Edit Post'>
-<img alt='' class='icon-action' height='18' src='http://img2.blogblog.com/img/icon18_edit_allbkg.gif' width='18'/>
-</a>
-</span>
-</span>
-<div id='fb-root'></div>
-<script>(function(d, s, id) {
-var js, fjs = d.getElementsByTagName(s)[0];
-if (d.getElementById(id)) {return;}
-js = d.createElement(s); js.id = id;
-js.src = "http://connect.facebook.net/en_US/all.js#xfbml=1";
-fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));
-</script>
-<script type='text/javascript'>
-(function() {
-var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-po.src = 'https://apis.google.com/js/plusone.js';
-var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-})();
-</script>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-<div class='post-share-buttons goog-inline-block'>
-<a class='goog-inline-block share-button sb-email' href='https://www.blogger.com/share-post.g?blogID=6852192370751838918&postID=8178176466869786854&target=email' target='_blank' title='Email This'><span class='share-button-link-text'>Email This</span></a><a class='goog-inline-block share-button sb-blog' href='https://www.blogger.com/share-post.g?blogID=6852192370751838918&postID=8178176466869786854&target=blog' onclick='window.open(this.href, "_blank", "height=270,width=475"); return false;' target='_blank' title='BlogThis!'><span class='share-button-link-text'>BlogThis!</span></a><a class='goog-inline-block share-button sb-twitter' href='https://www.blogger.com/share-post.g?blogID=6852192370751838918&postID=8178176466869786854&target=twitter' target='_blank' title='Share to Twitter'><span class='share-button-link-text'>Share to Twitter</span></a><a class='goog-inline-block share-button sb-facebook' href='https://www.blogger.com/share-post.g?blogID=6852192370751838918&postID=8178176466869786854&target=facebook' onclick='window.open(this.href, "_blank", "height=430,width=640"); return false;' target='_blank' title='Share to Facebook'><span class='share-button-link-text'>Share to Facebook</span></a><div class='goog-inline-block dummy-container'><g:plusone source='blogger:blog:plusone' href='http://kiddiezshop-btemplates.blogspot.com/2015/11/lorem-ipsum_53.html' size='medium' width='300' annotation='inline'/></div>
-</div>
-</div>
-<div class='post-footer-line post-footer-line-2'><span class='post-labels'>
-Labels:
-<a href='search/label/Lorem%201.html' rel='tag'>Lorem 1</a>,
-<a href='search/label/Lorem%202.html' rel='tag'>Lorem 2</a>,
-<a href='search/label/Lorem%203.html' rel='tag'>Lorem 3</a>
-</span>
-<span class='post-location'>
-</span>
-</div>
-<div class='post-footer-line post-footer-line-3'></div>
-</div>
-</div>
-</div>
-<div class='post-outer'>
-<div class='post hentry'>
-<a name='7335923200631861691'></a>
-<h3 class='post-title entry-title'>
-<a href='2015/11/lorem-ipsum_50.html'>Lorem Ipsum</a>
-</h3>
-<div class='post-header'>
-<div class='post-header-line-1'></div>
-</div>
-<div class='post-body entry-content' id='post-body-7335923200631861691'>
-<div id='summary7335923200631861691'><p><strong>&raquo; An Image</strong></p><p style="display:block; text-align:center;"><img style="margin:0px auto 10px;" src="http://lh3.googleusercontent.com/_Zuzii37VUO4/Ta0nUFUhg6I/AAAAAAAAFoY/GToUxRYcteY/s000/Antartic-by-Kelly-Speelman.jpg" border="0" alt="Antartic. by Kelly Speelman." width="500" height="332"/></p><p>Download this and more <a href="http://btemplates.com/">Blogger Templates</a> at <a href="http://btemplates.com" style="border:0 !important;text-decoration:none !important; margin:0px !important; padding:0px; !important; background:none !important;" title="BTemplates"><img src="http://1.bp.blogspot.com/_zNpQsOlwuPA/S2lKsFgNlMI/AAAAAAAAAKw/0Qay8rrjLKQ/s000/btemplates-small.png" alt="BTemplates" style="border:0 !important;text-decoration:none !important; margin:0px !important; padding:0px;background:none !important;"></a>. For tutorials, tips and tricks about Blogger visit our <a title="Blogger Tutorials" href="http://blog.btemplates.com">Blog</a>.</p><p><strong>&raquo; A floating image with link and text</strong></p><p><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://btemplates.com"><img style="margin: 0pt 0pt 10px 10px; float: right; cursor: pointer; width: 184px; height: 32px;" src="http://2.bp.blogspot.com/_Zuzii37VUO4/SdSQklhdvBI/AAAAAAAAEQU/-K-OReo6lig/s1600/www-btemplates-com.png" alt="BTemplates" border="0" /></a> Ea eam labores imperdiet, apeirian democritum ei nam, doming neglegentur ad vis. Ne malorum ceteros feugait quo, ius ea liber offendit placerat, est habemus aliquyam legendos id. Eam no corpora maluisset definitiones, eam mucius malorum id. Quo ea idque commodo utroque, per ex eros etiam accumsan.</p><p><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://btemplates.com"><img style="float:left; margin:0 10px 10px 0;cursor:pointer; cursor:hand;width: 184px; height: 32px;" src="http://2.bp.blogspot.com/_Zuzii37VUO4/SdSQklhdvBI/AAAAAAAAEQU/-K-OReo6lig/s1600/www-btemplates-com.png" border="0" alt="Blogger Templates" /></a> Eu mei solum oporteat eleifend, libris nominavi maiestatis duo at, quod dissentiet vel te. Legere prompta impedit id eum. Te soleat vocibus luptatum sed, augue dicta populo est ad, et consul diceret officiis duo. Et duo primis nostrum.</p></div>
-<script type='text/javascript'>createSummaryAndThumb("summary7335923200631861691");</script>
-<p><strong>&raquo; An Image</strong></p><p style="display:block; text-align:center;"><img style="margin:0px auto 10px;" src="http://lh3.googleusercontent.com/_Zuzii37VUO4/Ta0nUFUhg6I/AAAAAAAAFoY/GToUxRYcteY/s000/Antartic-by-Kelly-Speelman.jpg" border="0" alt="Antartic. by Kelly Speelman." width="500" height="332"/></p><p>Download this and more <a href="http://btemplates.com/">Blogger Templates</a> at <a href="http://btemplates.com" style="border:0 !important;text-decoration:none !important; margin:0px !important; padding:0px; !important; background:none !important;" title="BTemplates"><img src="http://1.bp.blogspot.com/_zNpQsOlwuPA/S2lKsFgNlMI/AAAAAAAAAKw/0Qay8rrjLKQ/s000/btemplates-small.png" alt="BTemplates" style="border:0 !important;text-decoration:none !important; margin:0px !important; padding:0px;background:none !important;"></a>. For tutorials, tips and tricks about Blogger visit our <a title="Blogger Tutorials" href="http://blog.btemplates.com">Blog</a>.</p><p><strong>&raquo; A floating image with link and text</strong></p><p><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://btemplates.com"><img style="margin: 0pt 0pt 10px 10px; float: right; cursor: pointer; width: 184px; height: 32px;" src="http://2.bp.blogspot.com/_Zuzii37VUO4/SdSQklhdvBI/AAAAAAAAEQU/-K-OReo6lig/s1600/www-btemplates-com.png" alt="BTemplates" border="0" /></a> Ea eam labores imperdiet, apeirian democritum ei nam, doming neglegentur ad vis. Ne malorum ceteros feugait quo, ius ea liber offendit placerat, est habemus aliquyam legendos id. Eam no corpora maluisset definitiones, eam mucius malorum id. Quo ea idque commodo utroque, per ex eros etiam accumsan.</p><p><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://btemplates.com"><img style="float:left; margin:0 10px 10px 0;cursor:pointer; cursor:hand;width: 184px; height: 32px;" src="http://2.bp.blogspot.com/_Zuzii37VUO4/SdSQklhdvBI/AAAAAAAAEQU/-K-OReo6lig/s1600/www-btemplates-com.png" border="0" alt="Blogger Templates" /></a> Eu mei solum oporteat eleifend, libris nominavi maiestatis duo at, quod dissentiet vel te. Legere prompta impedit id eum. Te soleat vocibus luptatum sed, augue dicta populo est ad, et consul diceret officiis duo. Et duo primis nostrum.</p>
-<div style='clear: both;'></div>
-</div>
-<div class='post-footer'>
-<div class='post-footer-line post-footer-line-1'><span class='post-author vcard'>
-Posted by
-<span class='fn'>BTemplates</span>
-</span>
-<span class='post-timestamp'>
-at
-<a class='timestamp-link' href='2015/11/lorem-ipsum_50.html' rel='bookmark' title='permanent link'><abbr class='published' title='2015-11-18T22:32:00-08:00'>10:32 PM</abbr></a>
-</span>
-<span class='post-comment-link'>
-</span>
-<span class='post-icons'>
-<span class='item-control blog-admin pid-1099626233'>
-<a href='https://www.blogger.com/post-edit.g?blogID=6852192370751838918&postID=7335923200631861691&from=pencil' title='Edit Post'>
-<img alt='' class='icon-action' height='18' src='http://img2.blogblog.com/img/icon18_edit_allbkg.gif' width='18'/>
-</a>
-</span>
-</span>
-<div class='post-share-buttons goog-inline-block'>
-<a class='goog-inline-block share-button sb-email' href='https://www.blogger.com/share-post.g?blogID=6852192370751838918&postID=7335923200631861691&target=email' target='_blank' title='Email This'><span class='share-button-link-text'>Email This</span></a><a class='goog-inline-block share-button sb-blog' href='https://www.blogger.com/share-post.g?blogID=6852192370751838918&postID=7335923200631861691&target=blog' onclick='window.open(this.href, "_blank", "height=270,width=475"); return false;' target='_blank' title='BlogThis!'><span class='share-button-link-text'>BlogThis!</span></a><a class='goog-inline-block share-button sb-twitter' href='https://www.blogger.com/share-post.g?blogID=6852192370751838918&postID=7335923200631861691&target=twitter' target='_blank' title='Share to Twitter'><span class='share-button-link-text'>Share to Twitter</span></a><a class='goog-inline-block share-button sb-facebook' href='https://www.blogger.com/share-post.g?blogID=6852192370751838918&postID=7335923200631861691&target=facebook' onclick='window.open(this.href, "_blank", "height=430,width=640"); return false;' target='_blank' title='Share to Facebook'><span class='share-button-link-text'>Share to Facebook</span></a><div class='goog-inline-block dummy-container'><g:plusone source='blogger:blog:plusone' href='http://kiddiezshop-btemplates.blogspot.com/2015/11/lorem-ipsum_50.html' size='medium' width='300' annotation='inline'/></div>
-</div>
-</div>
-<div class='post-footer-line post-footer-line-2'><span class='post-labels'>
-Labels:
-<a href='search/label/Lorem%201.html' rel='tag'>Lorem 1</a>,
-<a href='search/label/Lorem%203.html' rel='tag'>Lorem 3</a>
-</span>
-<span class='post-location'>
-</span>
-</div>
-<div class='post-footer-line post-footer-line-3'></div>
-</div>
-</div>
-</div>
-<div class='post-outer'>
-<div class='post hentry'>
-<a name='5395310937979818661'></a>
-<h3 class='post-title entry-title'>
-<a href='2015/11/lorem-ipsum_5.html'>Lorem Ipsum</a>
-</h3>
-<div class='post-header'>
-<div class='post-header-line-1'></div>
-</div>
-<div class='post-body entry-content' id='post-body-5395310937979818661'>
-<div id='summary5395310937979818661'><p><img src="http://lh6.googleusercontent.com/_Zuzii37VUO4/TaTi3fuciqI/AAAAAAAAFn8/jWQEmLcihNs/s000/popocatepetl-iztaccihuatl.jpg" alt="Volcanoes Popocatepetl and Iztaccihuatl, M&eacute;xico. By Fco. Vicente" width="500" height="332"/></p><p>Download this and more <a href="http://btemplates.com/">Blogger Templates</a> at <a href="http://btemplates.com" style="border:0 !important;text-decoration:none !important; margin:0px !important; padding:0px; !important; background:none !important;" title="BTemplates"><img src="http://1.bp.blogspot.com/_zNpQsOlwuPA/S2lKsFgNlMI/AAAAAAAAAKw/0Qay8rrjLKQ/s000/btemplates-small.png" alt="BTemplates" style="border:0 !important;text-decoration:none !important; margin:0px !important; padding:0px;background:none !important;" /></a>. For tutorials, tips and tricks about Blogger visit our <a title="Blogger Tutorials" href="http://blog.btemplates.com">Blog</a>.</p>
-</div>
-<script type='text/javascript'>createSummaryAndThumb("summary5395310937979818661");</script>
-<p><img src="http://lh6.googleusercontent.com/_Zuzii37VUO4/TaTi3fuciqI/AAAAAAAAFn8/jWQEmLcihNs/s000/popocatepetl-iztaccihuatl.jpg" alt="Volcanoes Popocatepetl and Iztaccihuatl, M&eacute;xico. By Fco. Vicente" width="500" height="332"/></p><p>Download this and more <a href="http://btemplates.com/">Blogger Templates</a> at <a href="http://btemplates.com" style="border:0 !important;text-decoration:none !important; margin:0px !important; padding:0px; !important; background:none !important;" title="BTemplates"><img src="http://1.bp.blogspot.com/_zNpQsOlwuPA/S2lKsFgNlMI/AAAAAAAAAKw/0Qay8rrjLKQ/s000/btemplates-small.png" alt="BTemplates" style="border:0 !important;text-decoration:none !important; margin:0px !important; padding:0px;background:none !important;" /></a>. For tutorials, tips and tricks about Blogger visit our <a title="Blogger Tutorials" href="http://blog.btemplates.com">Blog</a>.</p>
-<div style='clear: both;'></div>
-</div>
-<div class='post-footer'>
-<div class='post-footer-line post-footer-line-1'><span class='post-author vcard'>
-Posted by
-<span class='fn'>BTemplates</span>
-</span>
-<span class='post-timestamp'>
-at
-<a class='timestamp-link' href='2015/11/lorem-ipsum_5.html' rel='bookmark' title='permanent link'><abbr class='published' title='2015-11-18T22:32:00-08:00'>10:32 PM</abbr></a>
-</span>
-<span class='post-comment-link'>
-</span>
-<span class='post-icons'>
-<span class='item-control blog-admin pid-1099626233'>
-<a href='https://www.blogger.com/post-edit.g?blogID=6852192370751838918&postID=5395310937979818661&from=pencil' title='Edit Post'>
-<img alt='' class='icon-action' height='18' src='http://img2.blogblog.com/img/icon18_edit_allbkg.gif' width='18'/>
-</a>
-</span>
-</span>
-<div class='post-share-buttons goog-inline-block'>
-<a class='goog-inline-block share-button sb-email' href='https://www.blogger.com/share-post.g?blogID=6852192370751838918&postID=5395310937979818661&target=email' target='_blank' title='Email This'><span class='share-button-link-text'>Email This</span></a><a class='goog-inline-block share-button sb-blog' href='https://www.blogger.com/share-post.g?blogID=6852192370751838918&postID=5395310937979818661&target=blog' onclick='window.open(this.href, "_blank", "height=270,width=475"); return false;' target='_blank' title='BlogThis!'><span class='share-button-link-text'>BlogThis!</span></a><a class='goog-inline-block share-button sb-twitter' href='https://www.blogger.com/share-post.g?blogID=6852192370751838918&postID=5395310937979818661&target=twitter' target='_blank' title='Share to Twitter'><span class='share-button-link-text'>Share to Twitter</span></a><a class='goog-inline-block share-button sb-facebook' href='https://www.blogger.com/share-post.g?blogID=6852192370751838918&postID=5395310937979818661&target=facebook' onclick='window.open(this.href, "_blank", "height=430,width=640"); return false;' target='_blank' title='Share to Facebook'><span class='share-button-link-text'>Share to Facebook</span></a><div class='goog-inline-block dummy-container'><g:plusone source='blogger:blog:plusone' href='http://kiddiezshop-btemplates.blogspot.com/2015/11/lorem-ipsum_5.html' size='medium' width='300' annotation='inline'/></div>
-</div>
-</div>
-<div class='post-footer-line post-footer-line-2'><span class='post-labels'>
-Labels:
-<a href='search/label/Lorem%202.html' rel='tag'>Lorem 2</a>,
-<a href='search/label/Lorem%203.html' rel='tag'>Lorem 3</a>
-</span>
-<span class='post-location'>
-</span>
-</div>
-<div class='post-footer-line post-footer-line-3'></div>
-</div>
-</div>
-</div>
-<div class='post-outer'>
-<div class='post hentry'>
-<a name='4085996068485245780'></a>
-<h3 class='post-title entry-title'>
-<a href='2015/11/lorem-ipsum_18.html'>Lorem Ipsum</a>
-</h3>
-<div class='post-header'>
-<div class='post-header-line-1'></div>
-</div>
-<div class='post-body entry-content' id='post-body-4085996068485245780'>
-<div id='summary4085996068485245780'><p><img src="http://lh3.googleusercontent.com/_Zuzii37VUO4/Ta0nUiWvDBI/AAAAAAAAFog/nL_6t681_Gk/s000/Mammoth-Hot-Springs-Yellow-Stone-By-RePublicDomain.jpg" alt="Mammoth Hot Springs, Yellow Stone, USA. By RePublicDomain.com" width="500" height="375"/></p><p>Download this and more <a href="http://btemplates.com/">Blogger Templates</a> at <a href="http://btemplates.com" style="border:0 !important;text-decoration:none !important; margin:0px !important; padding:0px; !important; background:none !important;" title="BTemplates"><img src="http://1.bp.blogspot.com/_zNpQsOlwuPA/S2lKsFgNlMI/AAAAAAAAAKw/0Qay8rrjLKQ/s000/btemplates-small.png" alt="BTemplates" style="border:0 !important;text-decoration:none !important; margin:0px !important; padding:0px;background:none !important;" /></a>. For tutorials, tips and tricks about Blogger visit our <a title="Blogger Tutorials" href="http://blog.btemplates.com">Blog</a>.</p>
-</div>
-<script type='text/javascript'>createSummaryAndThumb("summary4085996068485245780");</script>
-<p><img src="http://lh3.googleusercontent.com/_Zuzii37VUO4/Ta0nUiWvDBI/AAAAAAAAFog/nL_6t681_Gk/s000/Mammoth-Hot-Springs-Yellow-Stone-By-RePublicDomain.jpg" alt="Mammoth Hot Springs, Yellow Stone, USA. By RePublicDomain.com" width="500" height="375"/></p><p>Download this and more <a href="http://btemplates.com/">Blogger Templates</a> at <a href="http://btemplates.com" style="border:0 !important;text-decoration:none !important; margin:0px !important; padding:0px; !important; background:none !important;" title="BTemplates"><img src="http://1.bp.blogspot.com/_zNpQsOlwuPA/S2lKsFgNlMI/AAAAAAAAAKw/0Qay8rrjLKQ/s000/btemplates-small.png" alt="BTemplates" style="border:0 !important;text-decoration:none !important; margin:0px !important; padding:0px;background:none !important;" /></a>. For tutorials, tips and tricks about Blogger visit our <a title="Blogger Tutorials" href="http://blog.btemplates.com">Blog</a>.</p>
-<div style='clear: both;'></div>
-</div>
-<div class='post-footer'>
-<div class='post-footer-line post-footer-line-1'><span class='post-author vcard'>
-Posted by
-<span class='fn'>BTemplates</span>
-</span>
-<span class='post-timestamp'>
-at
-<a class='timestamp-link' href='2015/11/lorem-ipsum_18.html' rel='bookmark' title='permanent link'><abbr class='published' title='2015-11-18T22:32:00-08:00'>10:32 PM</abbr></a>
-</span>
-<span class='post-comment-link'>
-</span>
-<span class='post-icons'>
-<span class='item-control blog-admin pid-1099626233'>
-<a href='https://www.blogger.com/post-edit.g?blogID=6852192370751838918&postID=4085996068485245780&from=pencil' title='Edit Post'>
-<img alt='' class='icon-action' height='18' src='http://img2.blogblog.com/img/icon18_edit_allbkg.gif' width='18'/>
-</a>
-</span>
-</span>
-<div class='post-share-buttons goog-inline-block'>
-<a class='goog-inline-block share-button sb-email' href='https://www.blogger.com/share-post.g?blogID=6852192370751838918&postID=4085996068485245780&target=email' target='_blank' title='Email This'><span class='share-button-link-text'>Email This</span></a><a class='goog-inline-block share-button sb-blog' href='https://www.blogger.com/share-post.g?blogID=6852192370751838918&postID=4085996068485245780&target=blog' onclick='window.open(this.href, "_blank", "height=270,width=475"); return false;' target='_blank' title='BlogThis!'><span class='share-button-link-text'>BlogThis!</span></a><a class='goog-inline-block share-button sb-twitter' href='https://www.blogger.com/share-post.g?blogID=6852192370751838918&postID=4085996068485245780&target=twitter' target='_blank' title='Share to Twitter'><span class='share-button-link-text'>Share to Twitter</span></a><a class='goog-inline-block share-button sb-facebook' href='https://www.blogger.com/share-post.g?blogID=6852192370751838918&postID=4085996068485245780&target=facebook' onclick='window.open(this.href, "_blank", "height=430,width=640"); return false;' target='_blank' title='Share to Facebook'><span class='share-button-link-text'>Share to Facebook</span></a><div class='goog-inline-block dummy-container'><g:plusone source='blogger:blog:plusone' href='http://kiddiezshop-btemplates.blogspot.com/2015/11/lorem-ipsum_18.html' size='medium' width='300' annotation='inline'/></div>
-</div>
-</div>
-<div class='post-footer-line post-footer-line-2'><span class='post-labels'>
-Labels:
-<a href='search/label/Lorem%203.html' rel='tag'>Lorem 3</a>,
-<a href='search/label/Lorem%204.html' rel='tag'>Lorem 4</a>
-</span>
-<span class='post-location'>
-</span>
-</div>
-<div class='post-footer-line post-footer-line-3'></div>
-</div>
-</div>
-</div>
-<div class='post-outer'>
-<div class='post hentry'>
-<a name='1942540987956832015'></a>
-<h3 class='post-title entry-title'>
-<a href='2015/11/lorem-ipsum.html'>Lorem Ipsum</a>
-</h3>
-<div class='post-header'>
-<div class='post-header-line-1'></div>
-</div>
-<div class='post-body entry-content' id='post-body-1942540987956832015'>
-<div id='summary1942540987956832015'><p><img src="http://lh5.googleusercontent.com/_Zuzii37VUO4/Ta0nUwb4ufI/AAAAAAAAFok/MhbqfKWW6N4/s000/Nasa-Orion-Nebula-By-RePublicDomain.jpg" alt="Orion Nebula, NASA." width="500" height="338"/></p><p>Download this and more <a href="http://btemplates.com/">Blogger Templates</a> at <a href="http://btemplates.com" style="border:0 !important;text-decoration:none !important; margin:0px !important; padding:0px; !important; background:none !important;" title="BTemplates"><img src="http://1.bp.blogspot.com/_zNpQsOlwuPA/S2lKsFgNlMI/AAAAAAAAAKw/0Qay8rrjLKQ/s000/btemplates-small.png" alt="BTemplates" style="border:0 !important;text-decoration:none !important; margin:0px !important; padding:0px;background:none !important;" /></a>. For tutorials, tips and tricks about Blogger visit our <a title="Blogger Tutorials" href="http://blog.btemplates.com">Blog</a>.</p>
-</div>
-<script type='text/javascript'>createSummaryAndThumb("summary1942540987956832015");</script>
-<p><img src="http://lh5.googleusercontent.com/_Zuzii37VUO4/Ta0nUwb4ufI/AAAAAAAAFok/MhbqfKWW6N4/s000/Nasa-Orion-Nebula-By-RePublicDomain.jpg" alt="Orion Nebula, NASA." width="500" height="338"/></p><p>Download this and more <a href="http://btemplates.com/">Blogger Templates</a> at <a href="http://btemplates.com" style="border:0 !important;text-decoration:none !important; margin:0px !important; padding:0px; !important; background:none !important;" title="BTemplates"><img src="http://1.bp.blogspot.com/_zNpQsOlwuPA/S2lKsFgNlMI/AAAAAAAAAKw/0Qay8rrjLKQ/s000/btemplates-small.png" alt="BTemplates" style="border:0 !important;text-decoration:none !important; margin:0px !important; padding:0px;background:none !important;" /></a>. For tutorials, tips and tricks about Blogger visit our <a title="Blogger Tutorials" href="http://blog.btemplates.com">Blog</a>.</p>
-<div style='clear: both;'></div>
-</div>
-<div class='post-footer'>
-<div class='post-footer-line post-footer-line-1'><span class='post-author vcard'>
-Posted by
-<span class='fn'>BTemplates</span>
-</span>
-<span class='post-timestamp'>
-at
-<a class='timestamp-link' href='2015/11/lorem-ipsum.html' rel='bookmark' title='permanent link'><abbr class='published' title='2015-11-18T22:32:00-08:00'>10:32 PM</abbr></a>
-</span>
-<span class='post-comment-link'>
-</span>
-<span class='post-icons'>
-<span class='item-control blog-admin pid-1099626233'>
-<a href='https://www.blogger.com/post-edit.g?blogID=6852192370751838918&postID=1942540987956832015&from=pencil' title='Edit Post'>
-<img alt='' class='icon-action' height='18' src='http://img2.blogblog.com/img/icon18_edit_allbkg.gif' width='18'/>
-</a>
-</span>
-</span>
-<div class='post-share-buttons goog-inline-block'>
-<a class='goog-inline-block share-button sb-email' href='https://www.blogger.com/share-post.g?blogID=6852192370751838918&postID=1942540987956832015&target=email' target='_blank' title='Email This'><span class='share-button-link-text'>Email This</span></a><a class='goog-inline-block share-button sb-blog' href='https://www.blogger.com/share-post.g?blogID=6852192370751838918&postID=1942540987956832015&target=blog' onclick='window.open(this.href, "_blank", "height=270,width=475"); return false;' target='_blank' title='BlogThis!'><span class='share-button-link-text'>BlogThis!</span></a><a class='goog-inline-block share-button sb-twitter' href='https://www.blogger.com/share-post.g?blogID=6852192370751838918&postID=1942540987956832015&target=twitter' target='_blank' title='Share to Twitter'><span class='share-button-link-text'>Share to Twitter</span></a><a class='goog-inline-block share-button sb-facebook' href='https://www.blogger.com/share-post.g?blogID=6852192370751838918&postID=1942540987956832015&target=facebook' onclick='window.open(this.href, "_blank", "height=430,width=640"); return false;' target='_blank' title='Share to Facebook'><span class='share-button-link-text'>Share to Facebook</span></a><div class='goog-inline-block dummy-container'><g:plusone source='blogger:blog:plusone' href='http://kiddiezshop-btemplates.blogspot.com/2015/11/lorem-ipsum.html' size='medium' width='300' annotation='inline'/></div>
-</div>
-</div>
-<div class='post-footer-line post-footer-line-2'><span class='post-labels'>
-Labels:
-<a href='search/label/Lorem%204.html' rel='tag'>Lorem 4</a>,
-<a href='search/label/Lorem%205.html' rel='tag'>Lorem 5</a>
-</span>
-<span class='post-location'>
-</span>
-</div>
-<div class='post-footer-line post-footer-line-3'></div>
-</div>
-</div>
-</div>
-<div class='post-outer'>
-<div class='post hentry'>
-<a name='2793729962376381999'></a>
-<h3 class='post-title entry-title'>
-<a href='2015/11/template-images.html'>Template images</a>
-</h3>
-<div class='post-header'>
-<div class='post-header-line-1'></div>
-</div>
-<div class='post-body entry-content' id='post-body-2793729962376381999'>
-<div id='summary2793729962376381999'><p><img src="http://lh4.googleusercontent.com/_Zuzii37VUO4/Ta0nTs8AbPI/AAAAAAAAFoU/zCvNKv4kfe4/s000/BeachWaves-By-RePublicDomain.jpg" alt="Beach waves. By RePublicDomain.com" width="500" height="332"/></p><p><strong>3 Images in this template:</strong><br /><span style="font-size:80%;">(Click on each to download)</span></p><ul><li><a href="http://3.bp.blogspot.com/-Fz4yfwWRL1A/Vk1s5oLUS2I/AAAAAAAABos/sFYIUk3fEFA/d/body.png">body.png</a></li><li><a href="http://3.bp.blogspot.com/-RoQ2a6sR4JA/Vk1s6dVnNRI/AAAAAAAABow/mb7nh6M15kg/d/header.png">header.png</a></li><li><a href="http://3.bp.blogspot.com/-iCCGyrbD20I/Vk1s7APB-KI/AAAAAAAABo0/Y96vYBkrH58/d/sidebar.png">sidebar.png</a></li></ul></div>
-<script type='text/javascript'>createSummaryAndThumb("summary2793729962376381999");</script>
-<p><img src="http://lh4.googleusercontent.com/_Zuzii37VUO4/Ta0nTs8AbPI/AAAAAAAAFoU/zCvNKv4kfe4/s000/BeachWaves-By-RePublicDomain.jpg" alt="Beach waves. By RePublicDomain.com" width="500" height="332"/></p><p><strong>3 Images in this template:</strong><br /><span style="font-size:80%;">(Click on each to download)</span></p><ul><li><a href="http://3.bp.blogspot.com/-Fz4yfwWRL1A/Vk1s5oLUS2I/AAAAAAAABos/sFYIUk3fEFA/d/body.png">body.png</a></li><li><a href="http://3.bp.blogspot.com/-RoQ2a6sR4JA/Vk1s6dVnNRI/AAAAAAAABow/mb7nh6M15kg/d/header.png">header.png</a></li><li><a href="http://3.bp.blogspot.com/-iCCGyrbD20I/Vk1s7APB-KI/AAAAAAAABo0/Y96vYBkrH58/d/sidebar.png">sidebar.png</a></li></ul>
-<div style='clear: both;'></div>
-</div>
-<div class='post-footer'>
-<div class='post-footer-line post-footer-line-1'><span class='post-author vcard'>
-Posted by
-<span class='fn'>BTemplates</span>
-</span>
-<span class='post-timestamp'>
-at
-<a class='timestamp-link' href='2015/11/template-images.html' rel='bookmark' title='permanent link'><abbr class='published' title='2015-11-18T22:32:00-08:00'>10:32 PM</abbr></a>
-</span>
-<span class='post-comment-link'>
-</span>
-<span class='post-icons'>
-<span class='item-control blog-admin pid-1099626233'>
-<a href='https://www.blogger.com/post-edit.g?blogID=6852192370751838918&postID=2793729962376381999&from=pencil' title='Edit Post'>
-<img alt='' class='icon-action' height='18' src='http://img2.blogblog.com/img/icon18_edit_allbkg.gif' width='18'/>
-</a>
-</span>
-</span>
-<div class='post-share-buttons goog-inline-block'>
-<a class='goog-inline-block share-button sb-email' href='https://www.blogger.com/share-post.g?blogID=6852192370751838918&postID=2793729962376381999&target=email' target='_blank' title='Email This'><span class='share-button-link-text'>Email This</span></a><a class='goog-inline-block share-button sb-blog' href='https://www.blogger.com/share-post.g?blogID=6852192370751838918&postID=2793729962376381999&target=blog' onclick='window.open(this.href, "_blank", "height=270,width=475"); return false;' target='_blank' title='BlogThis!'><span class='share-button-link-text'>BlogThis!</span></a><a class='goog-inline-block share-button sb-twitter' href='https://www.blogger.com/share-post.g?blogID=6852192370751838918&postID=2793729962376381999&target=twitter' target='_blank' title='Share to Twitter'><span class='share-button-link-text'>Share to Twitter</span></a><a class='goog-inline-block share-button sb-facebook' href='https://www.blogger.com/share-post.g?blogID=6852192370751838918&postID=2793729962376381999&target=facebook' onclick='window.open(this.href, "_blank", "height=430,width=640"); return false;' target='_blank' title='Share to Facebook'><span class='share-button-link-text'>Share to Facebook</span></a><div class='goog-inline-block dummy-container'><g:plusone source='blogger:blog:plusone' href='http://kiddiezshop-btemplates.blogspot.com/2015/11/template-images.html' size='medium' width='300' annotation='inline'/></div>
-</div>
-</div>
-<div class='post-footer-line post-footer-line-2'><span class='post-labels'>
-Labels:
-<a href='search/label/Lorem%201.html' rel='tag'>Lorem 1</a>
-</span>
-<span class='post-location'>
-</span>
-</div>
-<div class='post-footer-line post-footer-line-3'></div>
-</div>
-</div>
+            
+      
+        </ul>
+      </div>
+
+      <!-- fin Carrusel 1 -->
+
+          <h2 style="padding-left:30%">LA INSTITUCIÓN </h2>
+      <!-- Carrusel 2 -->
+      <div id="slidebox2">
+
+      <div class="next2"></div>
+      <div class="previous2"></div>
+      <div class="thumbs">
+      <a href="#" onClick="" class="1 thumbActive">1</a> 
+      <a href="#" onClick="" class="2">2</a> 
+      <a href="#" onClick="" class="3 ">3</a> 
+      <a href="#" onClick="" class="4">4</a> 
+       <a href="#" onClick="" class="5">5</a>
+      </div>
+        <ul>
+            <li><img src="img/imagen4.jpg" alt="img1" /></li>
+            <li><img src="img/imagen7.jpg" alt="img2" /></li>
+            <li><img src="img/imagen.jpg" alt="img1" /></li>
+            <li><img src="img/imagen1.jpg" alt="img2" /></li>
+            <li><img src="img/imagen3.jpg" alt="img1" /></li>
+        </ul>
+      </div>
+
+      <!-- fin Carrusel 2 -->
+     
+
+                             
+
 </div>
 
-        </div></div>
+
+		</div>
+	</div>
       
 </div>
 <div class='blog-pager' id='blog-pager'>
-<a class='home-link' href='index.html'>Home</a>
+<a class='home-link' href='index.php'>Inicio</a>
 </div>
 <div class='clear'></div>
 <div class='blog-feeds'>
@@ -456,112 +273,239 @@ Subscribe to:
 </div>
 </div>
 <script type="text/javascript">window.___gcfg = {'lang': 'en'};</script>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/coordenadas.js"></script>
+<script type="text/javascript" src="js/deal_index.js"></script>
+<script src="js/jcarousellite_1.0.1c5.js" type="text/javascript"></script>
+<script type="text/javascript">
+
+$(function() {
+  $("#slidebox").jCarouselLite({
+    vertical: false,
+    hoverPause:true,
+    btnPrev: ".previous",
+    btnNext: ".next",
+    visible: 1,
+    start: 0,
+    scroll: 1,
+    circular: true,
+    auto:1000,
+    speed:500,        
+    btnGo:
+        [".1", ".2",
+        ".3", ".4",".5",".6",".7"],
+    
+    afterEnd: function(a, to, btnGo) {
+        if(btnGo.length <= to){
+          to = 0;
+        }
+        $(".thumbActive").removeClass("thumbActive");
+        $(btnGo[to]).addClass("thumbActive");
+        }
+  });
+  /*carrusel2*/
+   $("#slidebox2").jCarouselLite({
+    vertical: false,
+    hoverPause:true,
+    btnPrev: ".previous2",
+    btnNext: ".next2",
+    visible: 1,
+    start: 0,
+    scroll: 1,
+    circular: true,
+    auto:1000,
+    speed:500,        
+    btnGo:
+        [".1", ".2",
+        ".3", ".4",".5"],
+    
+    afterEnd: function(a, to, btnGo) {
+        if(btnGo.length <= to){
+          to = 0;
+        }
+        $(".thumbActive").removeClass("thumbActive");
+        $(btnGo[to]).addClass("thumbActive");
+        }
+  });
+  /*fin carrusel 2*/
+    /*carrusel3*/
+   $("#slidebox3").jCarouselLite({
+    vertical: false,
+    hoverPause:true,
+    btnPrev: ".previous3",
+    btnNext: ".next3",
+    visible: 1,
+    start: 0,
+    scroll: 1,
+    circular: true,
+    auto:1000,
+    speed:500,        
+    btnGo:
+        [".1", ".2",
+        ".3", ".4",".5",".6",".7"],
+    
+    afterEnd: function(a, to, btnGo) {
+        if(btnGo.length <= to){
+          to = 0;
+        }
+        $(".thumbActive").removeClass("thumbActive");
+        $(btnGo[to]).addClass("thumbActive");
+        }
+  });
+  /*fin carrusel 3*/
+      /*carrusel4*/
+   $("#slidebox4").jCarouselLite({
+    vertical: false,
+    hoverPause:true,
+    btnPrev: ".previous4",
+    btnNext: ".next4",
+    visible: 1,
+    start: 0,
+    scroll: 1,
+    circular: true,
+    auto:1000,
+    speed:500,        
+    btnGo:
+        [".1", ".2",
+        ".3", ".4",".5",".6",".7"],
+    
+    afterEnd: function(a, to, btnGo) {
+        if(btnGo.length <= to){
+          to = 0;
+        }
+        $(".thumbActive").removeClass("thumbActive");
+        $(btnGo[to]).addClass("thumbActive");
+        }
+  });
+  /*fin carrusel 4*/
+     /*carrusel5*/
+   $("#slidebox5").jCarouselLite({
+    vertical: false,
+    hoverPause:true,
+    btnPrev: ".previous5",
+    btnNext: ".next5",
+    visible: 1,
+    start: 0,
+    scroll: 1,
+    circular: true,
+    auto:1000,
+    speed:500,        
+    btnGo:
+        [".1", ".2",
+        ".3", ".4",".5",".6",".7"],
+    
+    afterEnd: function(a, to, btnGo) {
+        if(btnGo.length <= to){
+          to = 0;
+        }
+        $(".thumbActive").removeClass("thumbActive");
+        $(btnGo[to]).addClass("thumbActive");
+        }
+  });
+  /*fin carrusel 5*/
+});
+</script>
+
 </div></div>
 </div>
 <!-- Sidebar -->
 <div id='sidebar-wrapper-right'>
 <div class='sidebar2 section' id='sidebar2'><div class='widget PopularPosts' id='PopularPosts1'>
-<h2>Popular Posts</h2>
+<h2>Ingreso de usuarios</h2>
 <div class='widget-content popular-posts'>
-<ul>
-<li>
-<div class='item-thumbnail-only'>
-<div class='item-thumbnail'>
-<a href='2015/11/lorem-ipsum_50.html' target='_blank'>
-<img alt='' border='0' height='72' src='http://lh3.googleusercontent.com/_Zuzii37VUO4/Ta0nUFUhg6I/AAAAAAAAFoY/GToUxRYcteY/s72-c/Antartic-by-Kelly-Speelman.jpg' width='72'/>
-</a>
-</div>
-<div class='item-title'><a href='2015/11/lorem-ipsum_50.html'>Lorem Ipsum</a></div>
-</div>
-<div style='clear: both;'></div>
-</li>
-<li>
-<div class='item-thumbnail-only'>
-<div class='item-thumbnail'>
-<a href='2015/11/lorem-ipsum_53.html' target='_blank'>
-<img alt='' border='0' height='72' src='http://lh3.googleusercontent.com/_Zuzii37VUO4/Ta0nUeMwXoI/AAAAAAAAFoc/7f0Um7OTgNg/s72-c/Antartic-by-Peter-Rejcek.jpg' width='72'/>
-</a>
-</div>
-<div class='item-title'><a href='2015/11/lorem-ipsum_53.html'>Lorem Ipsum</a></div>
-</div>
-<div style='clear: both;'></div>
-</li>
-</ul>
-<div class='clear'></div>
-<span class='widget-item-control'>
-<span class='item-control blog-admin'>
-<a class='quickedit' href='http://www.blogger.com/rearrange?blogID=6852192370751838918&widgetType=PopularPosts&widgetId=PopularPosts1&action=editWidget&sectionId=sidebar2' onclick='return _WidgetManager._PopupConfig(document.getElementById("PopularPosts1"));' target='configPopularPosts1' title='Edit'>
-<img alt='' height='18' src='http://img1.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
-</a>
-</span>
-</span>
-<div class='clear'></div>
-</div>
-</div><div class='widget HTML' id='HTML3'>
-<h2 class='title'>Blogger templates</h2>
-<div class='widget-content'>
-<script type="text/javascript">if(typeof jQuery == 'undefined'){document.write("<scr" + "ipt type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js'></scr" + "ipt>");}</script>
-<ul id="rssdata" style="display:none;"></ul><div id="rssloading">Loading...</div>
-<script type="text/javascript">
+    <form id="login" name="login" method="post" action=" " class="post2">
+    	   <p>
+	       <label for="usuario">Usuario</label>
+	       <br /> 
+	         <input type="text" name="usuario" id="usuario" />
+	      
+	     </p>
+	     <p>
+	       <label for="password">Contrase&ntilde;a </label>
+	       <br />
+	         <input type="password" name="password" id="password" />
+	      
+	     </p>
+	     <p>
+	       <label>
+	         <input type="submit" name="login2" id="login2" value="Entrar" />
+	       </label>
+	     </p>
+    	
+    </form>
 
-jQuery.noConflict();
-
-if( ! jQuery().jGFeed ) { (function(jQuery){jQuery.extend({jGFeed:function(url,fnk,num,key){if(url==null){return false;}var gurl="http://ajax.googleapis.com/ajax/services/feed/load?v=1.0&callback=?&q="+url;if(num!=null){gurl+="&num="+num;}if(key!=null){gurl+="&key="+key;}jQuery.getJSON(gurl,function(data){if(typeof fnk=="function"){fnk.call(this,data.responseData.feed);}else{return false;}});}});})(jQuery); }
-jQuery.jGFeed('http://btemplates.com/feed/',
-function(feeds){
-if(!feeds){return false;}
-for (var i=0; i < feeds.entries.length; i++) {
-	var item = feeds.entries[i];
-	var item_html = '<li><a href="'+item.link+'">'+item.title+'</a></li>';
-	jQuery('#rssdata').append(item_html);
-}
-jQuery('#rssloading').fadeOut();
-jQuery('#rssdata').slideDown();
-}, 5);</script>
-
-<script type="text/javascript" src="js/jquery.js"></script>
-<script type="text/javascript" src="js/coordenadas.js"></script>
 </div>
-<div class='clear'></div>
-<span class='widget-item-control'>
-<span class='item-control blog-admin'>
-<a class='quickedit' href='http://www.blogger.com/rearrange?blogID=6852192370751838918&widgetType=HTML&widgetId=HTML3&action=editWidget&sectionId=sidebar2' onclick='return _WidgetManager._PopupConfig(document.getElementById("HTML3"));' target='configHTML3' title='Edit'>
-<img alt='' height='18' src='http://img1.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
-</a>
-</span>
-</span>
-<div class='clear'></div>
-</div><div class='widget HTML' id='HTML2'>
-<h2 class='title'>Blogroll</h2>
-<div class='widget-content'>
-<ul><li><a href="http://btemplates.com" title="Blogger templates">BTemplates</a></li><li><a href="http://blog.btemplates.com">BTemplates Blog</a></li><li><a href="http://www.ipietoon.com/">Ipietoon</a></li></ul>
-</div>
-<div class='clear'></div>
-<span class='widget-item-control'>
-<span class='item-control blog-admin'>
-<a class='quickedit' href='http://www.blogger.com/rearrange?blogID=6852192370751838918&widgetType=HTML&widgetId=HTML2&action=editWidget&sectionId=sidebar2' onclick='return _WidgetManager._PopupConfig(document.getElementById("HTML2"));' target='configHTML2' title='Edit'>
-<img alt='' height='18' src='http://img1.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
-</a>
-</span>
-</span>
-<div class='clear'></div>
-</div><div class='widget HTML' id='HTML1'>
-<h2 class='title'>About</h2>
-<div class='widget-content'>
-Mel putent quaeque an, ut postea melius denique sit. Officiis sensibus at mea, sea at labitur deserunt. Eam dicam congue soluta ut. <a href='http://btemplates.com'>Blogger Templates</a>
-</div>
-<div class='clear'></div>
-<span class='widget-item-control'>
-<span class='item-control blog-admin'>
-<a class='quickedit' href='http://www.blogger.com/rearrange?blogID=6852192370751838918&widgetType=HTML&widgetId=HTML1&action=editWidget&sectionId=sidebar2' onclick='return _WidgetManager._PopupConfig(document.getElementById("HTML1"));' target='configHTML1' title='Edit'>
-<img alt='' height='18' src='http://img1.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
-</a>
-</span>
-</span>
-<div class='clear'></div>
 </div></div>
 </div>
 <!-- spacer for skins that want sidebar and main to be the same height-->
+<!-- actos!-->
+<div id='sidebar-wrapper-right'>
+<div class='sidebar2 section' id='sidebar3'><div class='widget PopularPosts' id='PopularPosts2'>
+<h2>Actos administrativos</h2>
+<div class='widget-content popular-posts'>
+      <ul>
+          
+<?php
+   $crud2 = new Crud();
+   $crud2->setConsulta("SELECT ruta_url,ruta_descrip FROM ruta ORDER BY ruta_id ASC");
+   $datos1 = $crud2->seleccionar($con->getConection());
+   $i=0;
+   while ($i<sizeof($datos1))
+   {
+?>
+          <li><a href="<?php echo $datos1[$i]['ruta_url'] ?>"><?php echo $datos1[$i]['ruta_descrip'] ?></a></li>
+        
+     <?php
+       $i++;
+    }
+     
+ $con->desconectar();
+     ?>
+      </ul>
+
+</div>
+</div></div>
+</div>
+<!-- actos!-->
+<!-- PQR!-->
+<div id='sidebar-wrapper-right'>
+<div class='sidebar2 section' id='sidebar3'><div class='widget PopularPosts' id='PopularPosts2'>
+<h2>Ayúdanos a mejorar</h2>
+<div class='widget-content popular-posts'>
+    <form id="comentario" name="comentario" method="post" action=" " class="post2">
+    	  
+	       <label for="usuario">Quiero expresar una:</label>
+	       <br /> 
+	         <select name="asunto" id="asunto" class="select">
+	         	 <option selected="selected" value="Felicitacion">Felicitación</option>
+	         	 <option value="Sugerencia">Sugerencia</option>
+	         	 <option value="No conformidad">No conformidad</option>
+	         </select> 
+	      
+	   
+	   <br />
+	   <br />
+	  
+	   <label for="coment">Escribe tu comentario</label>
+	       <br />
+	          <textarea rows="4" cols="21" id="mensaje" name="mensaje">
+
+</textarea> 
+	      
+	  
+	     <p style="padding-left:63px">
+	       <label>
+	         <input type="button" name="pqr" id="pqr" value="Enviar" onclick="javascript:ingresar_comentarios()" />
+	       </label>
+	     </p>
+    	
+    </form>
+
+</div>
+</div></div>
+</div>
+<!-- PQR!-->
+
 <div class='clear'>&#160;</div>
 </div>
 <!-- end content-wrapper -->
@@ -571,7 +515,7 @@ Mel putent quaeque an, ut postea melius denique sit. Officiis sensibus at mea, s
 </div>
 <div id='credit-wrapper'>
 <div id='credit'>
-<a href='index.html'>Kiddiez Shop</a> Copyright &#169; 2012  Design by Ipietoon <a href='http://www.ipietoon.com/' target='_blank'>Blogger Template</a>
+<a href='index.html'>Corporacón Politécnico de Magangué Nit: N° 900.170.599-2 Resolución: N° 4052(Dic 15-210) </a>  
 </div></div>
 
 <script type="text/javascript">

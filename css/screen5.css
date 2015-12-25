@@ -1,0 +1,24 @@
+
+img
+{
+	  background-color: white;
+    border: 1px solid gray;
+    height: 260px;
+    padding: 3px;
+    width: 592px;
+}
+
+
+#slidebox5{position:relative; border:1px solid #ccc; margin:40px auto;overflow:hidden;}
+#slidebox5, #slidebox5 ul {width:600px;height:300px;}
+#slidebox5, #slidebox5 ul li{width:600px;height:300px;}
+#slidebox5 ul li{position:relative; left:0; background:#eee; float:left;list-style: none; padding:15px 28px;  font-family:Verdana, Geneva, sans-serif; font-size:13px;}
+#slidebox5 .next5, #slidebox5 .previous5{position:absolute; z-index:2; display:block; width:21px; height:21px;top:139px;}
+#slidebox5 .next5{right:0; margin-right:10px; background:url(../img/slidebox_next.png) no-repeat left top;}
+#slidebox5 .next5:hover{background:url(../img/slidebox_next_hover.png) no-repeat left top;}
+#slidebox5 .previous5{margin-left:10px; background:url(../img/slidebox_previous.png) no-repeat left top;}
+#slidebox5 .previous5:hover{background:url(../img/slidebox_previous_hover.png) no-repeat left top;}
+#slidebox5 .thumbs{position:absolute; z-index:2; bottom:10px; right:10px;}
+#slidebox5 .thumbs a{display:block; margin-left:5px; float:left; font-family:Verdana, Geneva, sans-serif; font-size:9px; text-decoration:none; padding:2px 4px; background:url(../img/slidebox_thumb.png); color:#fff;}
+#slidebox5 .thumbs a:hover{background:#fff; color:#000;}
+#slidebox5 .thumbs .thumbActive{background:#fff; color:#000; display:block; margin-left:5px; float:left; font-family:Verdana, Geneva, sans-serif; font-size:9px; text-decoration:none; padding:2px 4px;}

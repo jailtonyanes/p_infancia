@@ -1,4 +1,17 @@
 <?php
+   session_start();
+  if(!isset($_SESSION['user_authorized'])) header("Location:index.php");
+    if($_SESSION['tipo']=='1' ||($_SESSION['tipo']!='1' && $_SESSION['perfil']=='2'))
+  {
+  	$var ='ok';
+  }
+  else
+  {
+  	header("Location:index.php");
+  }
+
+?>
+<?php
 if(isset($_GET['uid'])){
 			    switch ($_GET['uid']) {
 			    case 1:
@@ -131,7 +144,7 @@ function createSummaryAndThumb(pID){
 if (window.jstiming) window.jstiming.load.tick('headEnd');
 </script></head>
 <body>
-  <div id='header-outer'>
+  <div id='header-outer'  background:url('imagenes/header-3.jpg') no-repeat center">
 	<?php include('template/header-outer.php'); ?>	
   </div>
 
@@ -180,11 +193,11 @@ if (window.jstiming) window.jstiming.load.tick('headEnd');
 </h3>
 		</li>
 		<ul>
-			<li><a href="tematica.php?uid2=1&unidad=<?php echo $unidad ?>">Pre-matemáticas</a></li>
-			<li><a href="tematica.php?uid2=2&unidad=<?php echo $unidad ?>">Pre-escritura</a></li>
-			<li><a href="tematica.php?uid2=3&unidad=<?php echo $unidad ?>">Motricidad Fina</a></li>
-			<li><a href="tematica.php?uid2=4&unidad=<?php echo $unidad ?>">Motricidad Gruesa</a></li>
-			<li><a href="tematica.php?uid2=5&unidad=<?php echo $unidad ?>">Lenguaje</a></li>
+			<li><a href="tematica.php?prog=<?php echo $_GET['prog'] ?>&uid2=1&unidad=<?php echo $unidad ?>">Pre-matemáticas</a></li>
+			<li><a href="tematica.php?prog=<?php echo $_GET['prog'] ?>&uid2=2&unidad=<?php echo $unidad ?>">Pre-escritura</a></li>
+			<li><a href="tematica.php?prog=<?php echo $_GET['prog'] ?>&uid2=3&unidad=<?php echo $unidad ?>">Motricidad Fina</a></li>
+			<li><a href="tematica.php?prog=<?php echo $_GET['prog'] ?>&uid2=4&unidad=<?php echo $unidad ?>">Motricidad Gruesa</a></li>
+			<li><a href="tematica.php?prog=<?php echo $_GET['prog'] ?>&uid2=5&unidad=<?php echo $unidad ?>">Lenguaje</a></li>
 		</ul>
 		
 	
@@ -196,7 +209,7 @@ if (window.jstiming) window.jstiming.load.tick('headEnd');
       
 </div>
 <div class='blog-pager' id='blog-pager'>
-<a class='home-link' href='p_prejardin.php'>Regresar</a>
+<a class='home-link' href='p_prejardin.php?prog=2'>Regresar</a>
 </div>
 <div class='clear'></div>
 <div class='blog-feeds'>
@@ -208,111 +221,13 @@ Subscribe to:
 <script type="text/javascript">window.___gcfg = {'lang': 'en'};</script>
 </div></div>
 </div>
-<!-- Sidebar -->
-
-<div id='sidebar-wrapper-right'>
-<div class='sidebar2 section' id='sidebar2'><div class='widget PopularPosts' id='PopularPosts1'>
-<h2>Contenido</h2>
-<div class='widget-content popular-posts'>
-<ul>
-<li>
-<div class='item-thumbnail-only'>
-<div class='item-thumbnail'>
-<a href='2015/11/lorem-ipsum_50.html' target='_blank'>
-<img alt='' border='0' height='72' src='http://lh3.googleusercontent.com/_Zuzii37VUO4/Ta0nUFUhg6I/AAAAAAAAFoY/GToUxRYcteY/s72-c/Antartic-by-Kelly-Speelman.jpg' width='72'/>
-</a>
-</div>
-<div class='item-title'><a href='2015/11/lorem-ipsum_50.html'>Reglamento escolar </a></div>
-</div>
-<div style='clear: both;'></div>
-</li>
-<li>
-<div class='item-thumbnail-only'>
-<div class='item-thumbnail'>
-<a href='2015/11/lorem-ipsum_53.html' target='_blank'>
-<img alt='' border='0' height='72' src='http://lh3.googleusercontent.com/_Zuzii37VUO4/Ta0nUeMwXoI/AAAAAAAAFoc/7f0Um7OTgNg/s72-c/Antartic-by-Peter-Rejcek.jpg' width='72'/>
-</a>
-</div>
-<div class='item-title'><a href='2015/11/lorem-ipsum_53.html'>Actividades</a></div>
-</div>
-<div style='clear: both;'></div>
-</li>
-</ul>
-<div class='clear'></div>
-<span class='widget-item-control'>
-<span class='item-control blog-admin'>
-<a class='quickedit' href='http://www.blogger.com/rearrange?blogID=6852192370751838918&widgetType=PopularPosts&widgetId=PopularPosts1&action=editWidget&sectionId=sidebar2' onclick='return _WidgetManager._PopupConfig(document.getElementById("PopularPosts1"));' target='configPopularPosts1' title='Edit'>
-<img alt='' height='18' src='http://img1.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
-</a>
-</span>
-</span>
-<div class='clear'></div>
-</div>
-</div><div class='widget HTML' id='HTML3'>
-<h2 class='title'>Comentarios</h2>
-<div class='widget-content'>
-<script type="text/javascript">if(typeof jQuery == 'undefined'){document.write("<scr" + "ipt type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js'></scr" + "ipt>");}</script>
-<ul id="rssdata" style="display:none;"></ul><div id="rssloading">Loading...</div>
-<script type="text/javascript">
-
-jQuery.noConflict();
-
-if( ! jQuery().jGFeed ) { (function(jQuery){jQuery.extend({jGFeed:function(url,fnk,num,key){if(url==null){return false;}var gurl="http://ajax.googleapis.com/ajax/services/feed/load?v=1.0&callback=?&q="+url;if(num!=null){gurl+="&num="+num;}if(key!=null){gurl+="&key="+key;}jQuery.getJSON(gurl,function(data){if(typeof fnk=="function"){fnk.call(this,data.responseData.feed);}else{return false;}});}});})(jQuery); }
-jQuery.jGFeed('http://btemplates.com/feed/',
-function(feeds){
-if(!feeds){return false;}
-for (var i=0; i < feeds.entries.length; i++) {
-	var item = feeds.entries[i];
-	var item_html = '<li><a href="'+item.link+'">'+item.title+'</a></li>';
-	jQuery('#rssdata').append(item_html);
-}
-jQuery('#rssloading').fadeOut();
-jQuery('#rssdata').slideDown();
-}, 5);</script>
+<?php
+  include('template/inicio_sesion.php');
+?>
 
 <script type="text/javascript" src="js/jquery.js"></script>
 <script type="text/javascript" src="js/coordenadas.js"></script>
 </div>
-<div class='clear'></div>
-<span class='widget-item-control'>
-<span class='item-control blog-admin'>
-<a class='quickedit' href='http://www.blogger.com/rearrange?blogID=6852192370751838918&widgetType=HTML&widgetId=HTML3&action=editWidget&sectionId=sidebar2' onclick='return _WidgetManager._PopupConfig(document.getElementById("HTML3"));' target='configHTML3' title='Edit'>
-<img alt='' height='18' src='http://img1.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
-</a>
-</span>
-</span>
-<div class='clear'></div>
-</div><div class='widget HTML' id='HTML2'>
-<h2 class='title'>Blogroll</h2>
-<div class='widget-content'>
-<ul><li><a href="http://btemplates.com" title="Blogger templates">BTemplates</a></li><li><a href="http://blog.btemplates.com">BTemplates Blog</a></li><li><a href="http://www.ipietoon.com/">Ipietoon</a></li></ul>
-</div>
-<div class='clear'></div>
-<span class='widget-item-control'>
-<span class='item-control blog-admin'>
-<a class='quickedit' href='http://www.blogger.com/rearrange?blogID=6852192370751838918&widgetType=HTML&widgetId=HTML2&action=editWidget&sectionId=sidebar2' onclick='return _WidgetManager._PopupConfig(document.getElementById("HTML2"));' target='configHTML2' title='Edit'>
-<img alt='' height='18' src='http://img1.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
-</a>
-</span>
-</span>
-<div class='clear'></div>
-</div><div class='widget HTML' id='HTML1'>
-<h2 class='title'>About</h2>
-<div class='widget-content'>
-Mel putent quaeque an, ut postea melius denique sit. Officiis sensibus at mea, sea at labitur deserunt. Eam dicam congue soluta ut. <a href='http://btemplates.com'>Blogger Templates</a>
-</div>
-<div class='clear'></div>
-<span class='widget-item-control'>
-<span class='item-control blog-admin'>
-<a class='quickedit' href='http://www.blogger.com/rearrange?blogID=6852192370751838918&widgetType=HTML&widgetId=HTML1&action=editWidget&sectionId=sidebar2' onclick='return _WidgetManager._PopupConfig(document.getElementById("HTML1"));' target='configHTML1' title='Edit'>
-<img alt='' height='18' src='http://img1.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
-</a>
-</span>
-</span>
-<div class='clear'></div>
-</div></div>
-</div>
-<!-- spacer for skins that want sidebar and main to be the same height-->
 <div class='clear'>&#160;</div>
 </div>
 <!-- end content-wrapper -->
@@ -322,7 +237,7 @@ Mel putent quaeque an, ut postea melius denique sit. Officiis sensibus at mea, s
 </div>
 <div id='credit-wrapper'>
 <div id='credit'>
-<a href='index.html'>Kiddiez Shop</a> Copyright &#169; 2012  Design by Ipietoon <a href='http://www.ipietoon.com/' target='_blank'>Blogger Template</a>
+<a href='index.html'>Corporacón Politécnico de Magangué Nit: N° 900.170.599-2 Resolución: N° 4052(Dic 15-210) </a> 
 </div></div>
 <script type="text/javascript">
 if (window.jstiming) window.jstiming.load.tick('widgetJsBefore');
