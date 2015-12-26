@@ -32,7 +32,7 @@ else
 }
 ?>
 
-<li><a href='index.php'><span>Programa de educacion preescolar <?php echo $grado ?></span></a></li>
+<li><a href='index2.php'><span>Programa de educacion preescolar <?php echo $grado ?></span></a></li>
 
 
 <!-- <li><a href='p_parvulo.php'>Párvulo</a></li>

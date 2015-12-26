@@ -193,6 +193,18 @@ if (window.jstiming) window.jstiming.load.tick('headEnd');
       
 </div>
 <div class='blog-pager' id='blog-pager'>
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+		<br />
+		<br />
+		<br />
+		<br />	
+		<br />
+		<br />
+		<br />	
 <a class='home-link' href='p_parvulo.php?prog=3'>Regresar</a>
 </div>
 <div class='clear'></div>

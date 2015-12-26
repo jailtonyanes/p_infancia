@@ -87,7 +87,7 @@ if(isset($_GET['uid'])){
 <link rel="openid.delegate" href="http://kiddiezshop-btemplates.blogspot.com/" />
 <!--[if IE]> <script> (function() { var html5 = ("abbr,article,aside,audio,canvas,datalist,details," + "figure,footer,header,hgroup,mark,menu,meter,nav,output," + "progress,section,time,video").split(','); for (var i = 0; i < html5.length; i++) { document.createElement(html5[i]); } try { document.execCommand('BackgroundImageCache', false, true); } catch(e) {} })(); </script> <![endif]-->
 <title>
-Contenido Párvulos
+Contenido Prejardín
 </title>
 <link type='text/css' rel='stylesheet' href='https://www.blogger.com/static/v1/widgets/537653047-widget_css_bundle.css' />
 <link type='text/css' rel='stylesheet' href='https://www.blogger.com/dyn-css/authorization.css?targetBlogID=6852192370751838918&zx=7b04a788-0865-46f3-95bd-7f829e0d37ec' />
@@ -209,6 +209,19 @@ if (window.jstiming) window.jstiming.load.tick('headEnd');
       
 </div>
 <div class='blog-pager' id='blog-pager'>
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
 <a class='home-link' href='p_prejardin.php?prog=2'>Regresar</a>
 </div>
 <div class='clear'></div>
