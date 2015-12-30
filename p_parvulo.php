@@ -1,15 +1,104 @@
 <?php
-  session_start();
-  if(!isset($_SESSION['user_authorized'])) header("Location:index.php");
-  if($_SESSION['tipo']=='1' ||($_SESSION['tipo']!='1' && $_SESSION['perfil']=='3'))
+ session_start();
+  if(isset($_SESSION['user_authorized'])) 
   {
-  	$var ='ok';
-  }
-  else
-  {
-  	header("Location:index.php");
-  }
+	/*  if(!(isset($_SESSION['tipo'])=='1' ||(isset($_SESSION['tipo'])!='1' && isset($_SESSION['perfil'])=='1')))
+	  {
+	  	header("Location:index.php");
+	  }
+	  else
+	  {
+	  	
+	  	$var ='ok';
+
+	  }*/
+	  if($_SESSION['tipo']==1)
+	  {
+        ;
+        $var ='admin';
+	  }
+	  else
+	  {
+	  	if($_SESSION['perfil']=='3')
+	  	 {	
+	  	 	
+	  	 	$var='jardín';
+	     }
+	     else
+	     {
+	     	
+	     	header("Location:index.php");
+	     }
+	  }
+  }	 
 ?>
+<?php 
+
+    include('_include/configuration.php');
+  include('_classes/conectar.php');
+  include('_classes/crud.php');
+
+  $con = new Coneccion($server,$user,$password,$dbname);
+  $con->conectar();
+  $crud = new Crud();
+ //session_start();
+//  if(isset($_SESSION['user_authorized'])) {session_destroy();}
+?>
+<?php
+ if(isset($_POST['login2']) )
+ { 
+    
+    $crud->setConsulta(" SELECT * from usuario WHERE usuario_nick ='$_POST[usuario]' AND usuario_password='$_POST[password]' and usuario_active='1'");
+    $datos1 = $crud->seleccionar($con->getConection());
+    
+    if($crud->getTuplas()>0)
+    {
+            $_SESSION['user_authorized'] = true;
+            $_SESSION['nombre'] = $datos1[0]['usuario_nombre'];;
+            $_SESSION['apellido'] = $datos1[0]['usuario_apellido'];
+            $_SESSION['password'] = $datos1[0]['usuario_password'];
+            $_SESSION['nick'] = $datos1[0]['usuario_nick'];
+            $_SESSION['tipo'] = $datos1[0]['usuario_tipo'];
+            $_SESSION['perfil'] = $datos1[0]['usuario_perfil'];
+
+          
+      
+           if($datos1[0]['usuario_password']=='1234')
+           {
+             ?>
+              <script type="text/javascript">
+              location.href="cambio_password.php";
+              </script>
+           
+            <?php
+           }
+           else
+           {
+             ?>
+                <script type="text/javascript">
+              location.href="index2.php";
+              </script>
+             <?php
+           }
+
+           
+          
+              
+          
+           
+
+           
+    }
+    else
+    {
+  ?>
+      <script type="text/javascript">
+      alert('Usuario o Password Incorrectos');
+      </script>
+   <?php
+    }
+ }
+ ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html dir='ltr' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
 <head>
@@ -135,7 +224,7 @@ if (window.jstiming) window.jstiming.load.tick('headEnd');
 <div class='post hentry'>
 <a name='8178176466869786854'></a>
 <h3 class='post-title entry-title'>
-<a href='prog_parvulo.php?prog=3&uid=1'>Unidad I: El colegio</a>
+<a href='<?php if(!isset($_SESSION['user_authorized'])){echo '#';}else{echo'prog_jardin.php?prog=3&uid=1';} ?>'>Unidad I: El colegio</a>
 
 </h3>
 <div class='post-header'>
@@ -206,7 +295,7 @@ Labels:
 <div class='post hentry'>
 <a name='7335923200631861691'></a>
 <h3 class='post-title entry-title'>
-<a href='prog_parvulo.php?prog=3&uid=2'>Unidad II:Mi familia y mi casa:dependencias</a>
+<a href='<?php if(!isset($_SESSION['user_authorized'])){echo '#';}else{echo'prog_jardin.php?prog=3&uid=2';} ?>'>Unidad II:Mi familia y mi casa:dependencias</a>
 </h3>
 <div class='post-header'>
 <div class='post-header-line-1'></div>
@@ -255,7 +344,7 @@ Labels:
 <div class='post hentry'>
 <a name='5395310937979818661'></a>
 <h3 class='post-title entry-title'>
-<a href='prog_parvulo.php?prog=3&uid=3'>Unidad III: El cuerpo y aseo personal</a>
+<a href='<?php if(!isset($_SESSION['user_authorized'])){echo '#';}else{echo'prog_jardin.php?prog=3&uid=3';} ?>'>Unidad III: El cuerpo y aseo personal</a>
 </h3>
 <div class='post-header'>
 <div class='post-header-line-1'></div>
@@ -305,7 +394,7 @@ Labels:
 <div class='post hentry'>
 <a name='4085996068485245780'></a>
 <h3 class='post-title entry-title'>
-<a href='prog_parvulo.php?prog=3&uid=4'>Unidad IV: Prendas y estados del tiempo </a>
+<a href='<?php if(!isset($_SESSION['user_authorized'])){echo '#';}else{echo'prog_jardin.php?prog=3&uid=4';} ?>'>Unidad IV: Prendas y estados del tiempo </a>
 </h3>
 <div class='post-header'>
 <div class='post-header-line-1'></div>
@@ -355,7 +444,7 @@ Labels:
 <div class='post hentry'>
 <a name='1942540987956832015'></a>
 <h3 class='post-title entry-title'>
-<a href='prog_parvulo.php?prog=3&uid=5'>Unidad V: El campo y animales de la granja</a>
+<a href='<?php if(!isset($_SESSION['user_authorized'])){echo '#';}else{echo'prog_jardin.php?prog=3&uid=5';} ?>'>Unidad V: El campo y animales de la granja</a>
 </h3>
 <div class='post-header'>
 <div class='post-header-line-1'></div>
@@ -406,7 +495,7 @@ Labels:
 <div class='post hentry'>
 <a name='4085996068485245780'></a>
 <h3 class='post-title entry-title'>
-<a href='prog_parvulo.php?prog=3&uid=6'>Unidad VI: Animales de la selva</a>
+<a href='<?php if(!isset($_SESSION['user_authorized'])){echo '#';}else{echo'prog_jardin.php?prog=3&uid=6';} ?>'>Unidad VI: Animales de la selva</a>
 </h3>
 <div class='post-header'>
 <div class='post-header-line-1'></div>
@@ -459,7 +548,7 @@ Labels:
 <div class='post hentry'>
 <a name='4085996068485245780'></a>
 <h3 class='post-title entry-title'>
-<a href='prog_parvulo.php?prog=3&uid=7'>Unidad VII: Las Plantas, las Flores Y los alimentos</a>
+<a href='<?php if(!isset($_SESSION['user_authorized'])){echo '#';}else{echo'prog_jardin.php?prog=3&uid=7';} ?>'>Unidad VII: Las Plantas, las Flores Y los alimentos</a>
 </h3>
 <div class='post-header'>
 <div class='post-header-line-1'></div>
@@ -512,7 +601,7 @@ Labels:
 <div class='post hentry'>
 <a name='4085996068485245780'></a>
 <h3 class='post-title entry-title'>
-<a href='prog_parvulo.php?prog=3&uid=8'>Unidad VIII: Medios de transporte y señales de tránsito</a>
+<a href='<?php if(!isset($_SESSION['user_authorized'])){echo '#';}else{echo'prog_jardin.php?prog=3&uid=8';} ?>'>Unidad VIII: Medios de transporte y señales de tránsito</a>
 </h3>
 <div class='post-header'>
 <div class='post-header-line-1'></div>
@@ -565,7 +654,7 @@ Labels:
 <div class='post hentry'>
 <a name='4085996068485245780'></a>
 <h3 class='post-title entry-title'>
-<a href='prog_parvulo.php?prog=3&uid=9'>Unidad IX: Profesiones y oficios – la ciudad</a>
+<a href='<?php if(!isset($_SESSION['user_authorized'])){echo '#';}else{echo'prog_jardin.php?prog=3&uid=9';} ?>'>Unidad IX: Profesiones y oficios – la ciudad</a>
 </h3>
 <div class='post-header'>
 <div class='post-header-line-1'></div>
@@ -618,7 +707,7 @@ Labels:
 <div class='post hentry'>
 <a name='4085996068485245780'></a>
 <h3 class='post-title entry-title'>
-<a href='prog_parvulo.php?prog=3&uid=10'>Unidad X: Mi país</a>
+<a href='<?php if(!isset($_SESSION['user_authorized'])){echo '#';}else{echo'prog_jardin.php?prog=3&uid=10';} ?>'>Unidad X: Mi país</a>
 </h3>
 <div class='post-header'>
 <div class='post-header-line-1'></div>
@@ -672,7 +761,7 @@ Labels:
 <div class='post hentry'>
 <a name='2793729962376381999'></a>
 <h3 class='post-title entry-title'>
-<a href='prog_parvulo.php?prog=3&uid=11'>Unidad XI: Navidad </a>
+<a href='<?php if(!isset($_SESSION['user_authorized'])){echo '#';}else{echo'prog_jardin.php?prog=3&uid=11';} ?>'>Unidad XI: Navidad </a>
 </h3>
 <div class='post-header'>
 <div class='post-header-line-1'></div>
@@ -735,7 +824,21 @@ Subscribe to:
 </div>
 
 <?php
-  include('template/inicio_sesion.php');
+  if(isset($_SESSION['user_authorized']))
+  {
+    include('template/inicio_sesion.php');
+  }
+  else
+  {
+	/*  include('_include/configuration.php');
+	  include('_classes/conectar.php');
+	  include('_classes/crud.php');
+
+	  $con = new Coneccion($server,$user,$password,$dbname);
+	  $con->conectar();*/
+	  $crud2 = new Crud();
+	  include('template/right_nav_sin_log.php');
+  }  
 ?>
 <script type="text/javascript" src="js/jquery.js"></script>
 <script type="text/javascript" src="js/coordenadas.js"></script>
